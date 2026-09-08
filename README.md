@@ -6,9 +6,19 @@ Versi kedua laman slaid latihan **Custom Gemini untuk Analisis Laporan Audit**, 
 
 **Laman asal (tidak diubah):** https://akmal4244.github.io/CustomGeminiAUD/#1
 
+## Mulakan analisis
+
+Gem V4.4.1 sudah siap digunakan. Butang utama **Mulakan Analisis dengan Gem V4.4.1** pada slaid 1 membuka [Gem sedia ada](https://gemini.google.com/gem/10xOZ5ybA6Eqc0A9xzykmgTHPl_rq9sBK?usp=sharing), bukan pengurus atau editor Gem.
+
+1. Buka Gem dan log masuk dengan akaun Google yang mempunyai akses.
+2. Muat naik laporan yang dibenarkan organisasi dalam perbualan Gem.
+3. Salin Prompt Penuh pada slaid 5 ke perbualan yang sama, hantar dan semak draf terhadap sumber asal.
+
+Tiada langkah membina atau memasang Gem. Laman latihan kekal terbuka; tiada pengalihan automatik atau muat naik dokumen melalui laman ini. Akses tertakluk pada akaun dan kebenaran perkongsian. Jika akses ditolak, semak akaun atau hubungi pemilik.
+
 ## Kandungan
 
-Sebelas slaid mengekalkan perjalanan lapan langkah: akses/persediaan Gem, dokumen, prompt standard, struktur laporan, prompt susulan, semakan juruaudit, rangka pembentangan dan rumusan visual. Navigasi menyokong butang, papan kekunci, hash `#1`–`#11`, skrin penuh dan dialog QR.
+Sebelas slaid mengekalkan perjalanan lapan langkah: buka Gem sedia ada, dokumen, prompt standard, struktur laporan, prompt susulan, semakan juruaudit, rangka pembentangan dan rumusan visual. Navigasi menyokong butang, papan kekunci, hash `#1`–`#11`, skrin penuh dan dialog QR.
 
 | Kod | Kategori |
 |---|---|
@@ -22,18 +32,20 @@ Sebelas slaid mengekalkan perjalanan lapan langkah: akses/persediaan Gem, dokume
 
 Kategori bukan tahap keseriusan. Struktur laporan kekal enam bahagian + Bahagian7 QA. R=L×I, L/I integer1–4. Tahap R: Rendah1–4, Sederhana5–8, Tinggi9–12, Kritikal13–16; skor4 ialah Rendah. Risiko keseluruhan menggunakan Formula Hibrid, bukan purata sahaja.
 
-## Bahan muat turun
+## Bahan muat turun pilihan
+
+Fail ini ialah rujukan dan sandaran; peserta tidak perlu memuat turun atau memasangnya untuk menggunakan Gem yang sudah siap.
 
 Dalam `downloads/`:
-- `Arahan_Gem_v4.4.1.md` — arahan penuh untuk medan Instructions.
-- `Panduan_Format_Analisis_Audit_v4.4.1.md` — knowledge format/kaedah sejajar.
-- `Panduan_7_Kategori_Isu_Audit_v4.4.1.md` — knowledge kategori sejajar.
+- `Arahan_Gem_v4.4.1.md` — rujukan/sandaran arahan penuh Gem.
+- `Panduan_Format_Analisis_Audit_v4.4.1.md` — rujukan knowledge format/kaedah sejajar.
+- `Panduan_7_Kategori_Isu_Audit_v4.4.1.md` — rujukan knowledge kategori sejajar.
 - `Rangka_Pembentangan_v4.4.1.md` — templat teks kosong, bukan fail PowerPoint.
 - `Contoh_Latihan_Sintetik_v4.4.1.md` — kes rekaan dan jangkaan semakan, bukan dapatan audit sebenar atau knowledge bagi laporan sebenar.
 
 Arahan dan knowledge bukan sumber dapatan. Muat naik laporan audit sebenar hanya dalam perbualan yang dibenarkan organisasi. Jangan terbit laporan, lampiran, hasil audit sensitif, token atau kata laluan dalam repo ini.
 
-Akses Gem sedia ada bergantung pada akaun dan perkongsian pemilik. Pakej ini membolehkan peserta menyediakan Gem sendiri; pautan editor pemilik tidak diterbitkan dan tiada kebenaran perkongsian diubah.
+Pautan editor pemilik tidak diterbitkan. Laman ini tidak mengubah kebenaran perkongsian Gem atau menyediakan akses tanpa akaun.
 
 ## Jalankan setempat
 

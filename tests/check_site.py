@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
+GEM_URL = "https://gemini.google.com/gem/10xOZ5ybA6Eqc0A9xzykmgTHPl_rq9sBK?usp=sharing"
 CATEGORIES = [
     "Tiada Mandat", "Tadbir Urus", "Kesilapan / Isu Teknikal", "Kecuaian",
     "Pembaziran", "Pemborosan", "Penyelewengan / Ketirisan",
@@ -54,6 +55,19 @@ for name in CATEGORIES:
 assert not re.search(r"(?<![\d.])\b5\s+[Kk]ategori\b", text), "Obsolete taxonomy"
 assert "13soyVBmExhzZiL88kbKawhKt1rzceJrF" not in html, "Legacy Gem URL"
 assert "/gems/edit/" not in html, "Owner editor URL must not be advertised"
+assert "/gems/view" not in html and "gemini.google.com/u/" not in html, "Use participant share link"
+assert not re.search(r"gemini\.google\.com/gem/[a-f0-9]{12}(?:[\"< ?]|$)", html), "Owner runtime ID is not the participant share link"
+assert p.urls.count(GEM_URL) == 4, "All four Gem buttons must use the official share URL"
+assert re.search(r'<pre\b[^>]*id="gem-link"[^>]*>' + re.escape(GEM_URL) + r'</pre>', html), "Copied Gem URL differs"
+slide_one = re.search(r'<section\b[^>]*data-slide="1".*?</section>', html, re.S).group()
+assert re.search(r'<a class="btn primary" id="start-analysis" href="' + re.escape(GEM_URL) + r'"[^>]*>Mulakan Analisis dengan Gem V4\.4\.1</a>', slide_one), "Slide 1 needs a visible primary start CTA"
+assert 'id="gem-usage"' in html and 'id="gem-setup"' not in html
+assert "Buka dan gunakan Gem V4.4.1" in text
+assert not re.search(r'<details\b[^>]*id="gem-downloads"[^>]*\bopen\b', html), "Optional downloads must start collapsed"
+for obsolete in ("Bina Gem sendiri", "bina Gem,", "Gem baharu / New Gem", "Buka pengurus Gems", "knowledge v4.4.1 dipasang"):
+    assert obsolete not in text, f"Obsolete participant setup step: {obsolete}"
+readme = (ROOT / "README.md").read_text(encoding="utf-8")
+assert GEM_URL in readme and "menyediakan Gem sendiri" not in readme
 assert not re.search(r"Rendah\s*[:=(]?\s*1\s*[-–]\s*3\b", text), "Wrong Low band"
 assert not re.search(r"Sederhana\s*[:=(]?\s*4\s*[-–]\s*8\b", text), "Wrong Moderate band"
 
@@ -86,4 +100,5 @@ for name in DOWNLOADS:
 
 print(f"PASS: 11 slides; {len(p.ids)} unique IDs; {len(p.copy_targets)} clipboard controls")
 print("PASS: seven-category terminology, risk bands, resources and five downloads")
+print("PASS: ready Gem CTA, official share URL and optional reference downloads")
 print("PASS: canonical knowledge equality and allowlisted Pages artifact")
