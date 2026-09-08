@@ -1,0 +1,52 @@
+name: Deploy V2 training site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check training site invariants
+        run: python3 tests/check_site.py
+
+      - name: Stage public training materials only
+        run: |
+          set -eu
+          mkdir -p _site/assets _site/downloads
+          cp index.html .nojekyll _site/
+          cp assets/jata-negara.svg assets/mohamad-nurakmal.png assets/slide-gems-qr.png _site/assets/
+          for file in Arahan_Gem_v4.4.1.md Panduan_Format_Analisis_Audit_v4.4.1.md Panduan_7_Kategori_Isu_Audit_v4.4.1.md Rangka_Pembentangan_v4.4.1.md Contoh_Latihan_Sintetik_v4.4.1.md; do
+            cp "downloads/$file" _site/downloads/
+          done
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload reviewed site
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
