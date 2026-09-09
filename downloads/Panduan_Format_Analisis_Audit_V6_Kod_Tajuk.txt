@@ -146,6 +146,36 @@ Jika nama universiti atau tahun tidak jelas, gunakan:
 
 ---
 
+# 4A. Peraturan Kod Tajuk Pengauditan
+
+### Kod Tajuk
+
+Setiap Tajuk Pengauditan mesti diberikan satu **Kod Tajuk** yang ringkas, unik dan mempunyai makna berdasarkan Tajuk Pengauditan sebenar.
+
+Kaedah pembentukan:
+
+1. Bentuk kod daripada singkatan tema utama pengauditan.
+2. Jika dua atau lebih tajuk mempunyai tema yang sama, tambah singkatan Entiti / PTj untuk membezakannya.
+3. Utamakan singkatan rasmi Entiti / PTj jika dinyatakan dalam dokumen pengguna semasa.
+4. Jika tiada singkatan rasmi, bina singkatan ringkas daripada perkataan utama tajuk tanpa mengubah maksud.
+5. Gunakan huruf besar dan tanda sempang jika perlu.
+6. Jangan gunakan kod generik berasaskan nombor sahaja seperti `TA-01`, `TA-02` jika kod bermakna boleh dibentuk.
+7. Kod Tajuk mesti unik dalam sesi analisis semasa.
+8. Setelah Kod Tajuk ditetapkan dalam Bahagian 2A, kod tersebut mesti kekal sama dalam Bahagian 2B, Bahagian 3, Bahagian 4, Bahagian 5 dan Bahagian 6.
+9. Jangan menukar Kod Tajuk selepas ia digunakan untuk membina ID Penemuan.
+10. Kod Tajuk ialah label rujukan analisis dan bukan kategori audit K1 hingga K7.
+
+Contoh kaedah:
+- `PPK-PKU` = Pengurusan Pentadbiran dan Kewangan — Pusat Kesihatan UniMAP
+- `PPK-FKTM` = Pengurusan Pentadbiran dan Kewangan — FKTM
+- `PKEND` = Pengurusan Kenderaan
+- `PAS-PTSFP` = Penggunaan Aplikasi / Sistem — PTSFP
+- `SPK-UNI` = Susulan Penyata Kewangan UniMAP
+
+Contoh di atas hanya menerangkan kaedah pembentukan kod dan bukan dapatan sebenar.
+
+---
+
 # 5. Bahagian 2 — Ringkasan Eksekutif
 
 ## 5.1 Tujuan
@@ -170,10 +200,13 @@ Bahagian ini mesti menerangkan:
 
 Gunakan jadual berikut:
 
-| Bil. | Tajuk Pengauditan | Entiti / PTj | Tempoh Audit | Status Data |
-|---|---|---|---|---|
+| Bil. | Kod Tajuk | Tajuk Pengauditan | Entiti / PTj | Tempoh Audit | Status Data |
+|---|---|---|---|---|---|
 
 ### Panduan Pengisian
+
+**Kod Tajuk**  
+Gunakan Kod Tajuk bermakna yang telah dibentuk mengikut Peraturan Kod Tajuk Pengauditan. Kod ini mesti unik dan kekal sama sepanjang analisis.
 
 **Tajuk Pengauditan**  
 Gunakan tajuk sebenar daripada dokumen pengguna semasa.
@@ -199,8 +232,8 @@ Nyatakan status seperti:
 
 Gunakan jadual berikut:
 
-| Bil. | Tajuk Pengauditan | Markah / Penarafan | Jumlah Penemuan Utama | Isu Berulang | Risiko Dominan | Catatan |
-|---|---|---|---:|---:|---|---|
+| Bil. | Kod Tajuk | Tajuk Pengauditan | Markah / Penarafan | Jumlah Penemuan Utama | Isu Berulang | Risiko Dominan | Catatan |
+|---|---|---|---|---:|---:|---|---|
 
 ### Peraturan Prestasi
 
@@ -212,6 +245,7 @@ Gunakan jadual berikut:
 6. Jumlah penemuan utama mesti berdasarkan register penemuan di Bahagian 3.
 7. Isu berulang mesti berdasarkan analisis di Bahagian 4.
 8. Risiko dominan mesti berdasarkan jadual risiko di Bahagian 5.
+9. Kod Tajuk mesti sama seperti yang ditetapkan dalam Bahagian 2A.
 
 ---
 
@@ -249,7 +283,7 @@ Bahagian 5 tidak boleh mencipta isu baharu yang tidak wujud dalam Bahagian 3.
 
 Gunakan format berikut bagi setiap tajuk:
 
-## 3.[n] [TAJUK PENGAUDITAN]
+## 3.[n] [KOD TAJUK] — [TAJUK PENGAUDITAN]
 
 ### Objektif Pengauditan
 [Nyatakan objektif pengauditan berdasarkan dokumen pengguna semasa.]
@@ -277,13 +311,18 @@ Gunakan jadual berikut:
 **ID Penemuan**  
 Gunakan format:
 
-PU-[Nombor Tajuk Audit]-[Nombor Penemuan]
+PU-[KOD TAJUK]-[Nombor Penemuan]
 
 Contoh:
-- PU-1-01
-- PU-1-02
-- PU-2-01
-- PU-3-01
+- PU-PPK-PKU-01
+- PU-PPK-PKU-02
+- PU-PPK-FKTM-01
+- PU-PKEND-01
+
+Peraturan pemetaan:
+- Bahagian `KOD TAJUK` dalam ID Penemuan mesti sama tepat dengan Kod Tajuk di Bahagian 2A.
+- Contoh: `PPK-PKU` → `PU-PPK-PKU-01`, `PU-PPK-PKU-02`.
+- Nombor terakhir ialah nombor turutan penemuan dalam tajuk tersebut dan hendaklah menggunakan dua digit.
 
 **Penemuan Utama**  
 Nyatakan isu utama secara jelas. Jangan terlalu umum. Penemuan mesti berdasarkan dokumen pengguna semasa.
@@ -478,8 +517,8 @@ Sebelum jadual, tulis penerangan seperti berikut dan sesuaikan dengan dokumen:
 
 Gunakan jadual berikut:
 
-| Bil. | Isu Audit Berulang | ID Penemuan Terlibat | Tajuk Audit Terlibat | Bentuk Persamaan | Kekerapan | Bukti dan Rujukan Dokumen | Implikasi |
-|---|---|---|---|---|---:|---|---|
+| Bil. | Isu Audit Berulang | ID Penemuan Terlibat | Kod Tajuk Terlibat | Tajuk Audit Terlibat | Bentuk Persamaan | Kekerapan | Bukti dan Rujukan Dokumen | Implikasi |
+|---|---|---|---|---|---|---:|---|---|
 
 ### Panduan Pengisian
 
@@ -488,6 +527,9 @@ Nyatakan isu secara jelas dan tidak terlalu umum.
 
 **ID Penemuan Terlibat**  
 Senaraikan ID Penemuan daripada Bahagian 3.
+
+**Kod Tajuk Terlibat**  
+Senaraikan Kod Tajuk yang sepadan dengan ID Penemuan terlibat.
 
 **Tajuk Audit Terlibat**  
 Senaraikan tajuk audit yang mempunyai isu sama atau hampir sama.
@@ -586,10 +628,13 @@ Sebelum jadual, tulis penerangan berikut dan sesuaikan dengan dokumen:
 
 Gunakan jadual berikut:
 
-| Bil. | ID Penemuan | Tajuk Pengauditan | Isu Audit | Rujukan Bukti Dokumen | Perenggan / Seksyen Sokongan | Kategori | Kemungkinan (L) | Impak (I) | Skor Risiko | Tahap Risiko | Justifikasi |
-|---|---|---|---|---|---|---|---:|---:|---:|---|---|
+| Bil. | Kod Tajuk | ID Penemuan | Tajuk Pengauditan | Isu Audit | Rujukan Bukti Dokumen | Perenggan / Seksyen Sokongan | Kategori | Kemungkinan (L) | Impak (I) | Skor Risiko | Tahap Risiko | Justifikasi |
+|---|---|---|---|---|---|---|---|---:|---:|---:|---|---|
 
 ### Panduan Pengisian
+
+**Kod Tajuk**  
+Mesti sama dengan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan mesti sepadan dengan bahagian Kod Tajuk dalam ID Penemuan.
 
 **ID Penemuan**  
 Mesti sama dengan ID Penemuan dalam Bahagian 3.
@@ -715,6 +760,8 @@ Peraturan tally mutlak:
 4. Bukti tidak mencukupi untuk kategori atau skor risiko bukan alasan untuk menggugurkan penemuan daripada Bahagian 5.
 5. Status Kesepadanan hanya boleh ditulis “Lengkap” apabila jumlah dan set ID adalah sama.
 6. Jika tidak sama, output mesti dibetulkan sebelum jawapan akhir.
+7. Semua Kod Tajuk dalam Bahagian 3, Bahagian 4 dan Bahagian 5 mesti wujud dalam Bahagian 2A dan digunakan secara konsisten.
+8. Bahagian Kod Tajuk dalam setiap ID Penemuan mesti sepadan dengan Kod Tajuk baris tersebut.
 
 ### 8.4.1 Semakan Liputan 7 Kategori
 
@@ -944,6 +991,9 @@ Gem tidak boleh:
 21. Menukar N kepada bilangan penemuan yang mempunyai skor lengkap; N mesti kekal jumlah semua ID Penemuan.
 22. Melabel statistik subset N_sah sebagai statistik keseluruhan tanpa label SEPARA.
 23. Menetapkan Tahap Risiko Keseluruhan muktamad apabila penilaian risiko masih belum lengkap.
+24. Menggunakan Kod Tajuk generik berasaskan nombor sahaja apabila Kod Tajuk bermakna boleh dibentuk.
+25. Menukar Kod Tajuk selepas ID Penemuan telah diwujudkan.
+26. Menggunakan Kod Tajuk yang tidak sepadan dengan Tajuk Pengauditan atau ID Penemuan.
 
 ---
 

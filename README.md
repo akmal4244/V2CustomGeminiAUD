@@ -1,6 +1,6 @@
-# V2CustomGeminiAUD — Latihan Gem V6
+# V2CustomGeminiAUD — Latihan Gem V6 Kod Tajuk
 
-Laman latihan Custom Gemini untuk Analisis Laporan Audit, dikemas kini menggunakan lima fail Gem V6. HTML/CSS/JavaScript statik; reka bentuk dan navigasi 11 slaid dikekalkan.
+Laman latihan Custom Gemini untuk Analisis Laporan Audit, dikemas kini menggunakan lima fail terkini Gem V6 Kod Tajuk. HTML/CSS/JavaScript statik; reka bentuk dan navigasi 11 slaid dikekalkan.
 
 **Laman:** https://akmal4244.github.io/V2CustomGeminiAUD/#1
 
@@ -15,7 +15,9 @@ Laluan GitHub Pages peka huruf besar/kecil: gunakan `V2CustomGeminiAUD` dengan V
 
 Akses Gem tertakluk pada akaun dan kebenaran perkongsian. Laman tidak memuat naik laporan pengguna. Semua contoh latihan ialah sintetik.
 
-## Kaedah V6
+## Kaedah V6 Kod Tajuk
+
+Bahagian 2A menetapkan Kod Tajuk bermakna, unik dan berasaskan tema audit sebenar serta singkatan Entiti/PTj jika perlu. Kekalkan kod dalam Bahagian 2B hingga Bahagian 6. ID Penemuan menggunakan `PU-[KOD TAJUK]-[NN]`, dengan nombor turutan dua digit; kod dalam ID mesti sepadan tepat dengan Bahagian 2A. Contoh kaedah: `PKEND` → `PU-PKEND-01`. Kod Tajuk berbeza daripada kategori K1–K7.
 
 - K1 — Tadbir Urus
 - K2 — Tiada Mandat
@@ -34,10 +36,10 @@ N ialah semua ID, N_sah ialah penemuan dengan L/I lengkap, N_belum ialah penilai
 Lima fail sumber disalin tanpa mengubah kandungan. `downloads/manifest-v6.json` merekod nama asal dan SHA256 untuk menyemak kesetiaan fail:
 
 - [Matriks risiko 4×4 (.pdf)](downloads/Markah_Risiko_4x4.pdf)
-- [Panduan 7 kategori V6 (.md)](downloads/Panduan_7_Kategori_Isu_Audit_V6.md)
-- [Panduan format analisis V6 (.md)](downloads/Panduan_Format_Analisis_Audit_V6.md)
-- [Arahan penuh Gem V6 (.txt)](downloads/Instruction_Gem_Penganalisis_Audit_V6.txt)
-- [Prompt kali pertama V6 (.txt)](downloads/Prompt_Pertama_Analisis_V6.txt)
+- [Panduan 7 kategori V6 (.txt)](downloads/Panduan_7_Kategori_Isu_Audit_V6.txt)
+- [Panduan format V6 Kod Tajuk (.txt)](downloads/Panduan_Format_Analisis_Audit_V6_Kod_Tajuk.txt)
+- [Arahan Gem V6 Kod Tajuk (.txt)](downloads/Instruction_Gem_Penganalisis_Audit_V6_Kod_Tajuk.txt)
+- [Prompt kali pertama V6 Kod Tajuk (.txt)](downloads/Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt)
 
 Bahan latihan tambahan:
 - [Contoh sintetik V6](downloads/Contoh_Latihan_Sintetik_V6.md)

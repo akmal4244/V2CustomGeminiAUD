@@ -14,9 +14,9 @@ CATEGORIES = [
     "Pembaziran", "Pemborosan", "Penyelewengan / Ketirisan",
 ]
 DOWNLOADS = [
-    "Markah_Risiko_4x4.pdf", "Panduan_Format_Analisis_Audit_V6.md",
-    "Panduan_7_Kategori_Isu_Audit_V6.md", "Instruction_Gem_Penganalisis_Audit_V6.txt",
-    "Prompt_Pertama_Analisis_V6.txt", "Templat_Fokus_Pengurusan_V6.md",
+    "Markah_Risiko_4x4.pdf", "Panduan_Format_Analisis_Audit_V6_Kod_Tajuk.txt",
+    "Panduan_7_Kategori_Isu_Audit_V6.txt", "Instruction_Gem_Penganalisis_Audit_V6_Kod_Tajuk.txt",
+    "Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt", "Templat_Fokus_Pengurusan_V6.md",
     "Contoh_Latihan_Sintetik_V6.md",
 ]
 
@@ -97,15 +97,20 @@ for name in DOWNLOADS:
 
 manifest = json.loads((ROOT / "downloads/manifest-v6.json").read_text(encoding="utf-8"))
 assert manifest["version"] == "V6" and len(manifest["files"]) == 5
+assert manifest["revision"] == "Kod Tajuk"
 for source in manifest["files"]:
     assert hashlib.sha256((ROOT / source["path"]).read_bytes()).hexdigest() == source["sha256"], f"Source artifact changed: {source['path']}"
 
 prompt = re.search(r'<pre id="prompt-full"[^>]*>(.*?)</pre>', html, re.S).group(1)
-assert unescape(prompt).strip() == (ROOT / "downloads/Prompt_Pertama_Analisis_V6.txt").read_text(encoding="utf-8").strip(), "Copied prompt differs from V6 source"
+assert unescape(prompt).strip() == (ROOT / "downloads/Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt").read_text(encoding="utf-8").strip(), "Copied prompt differs from V6 source"
 assert re.findall(r'<dt>(.*?)</dt>', html) == [f"K{i} — {name}" for i, name in enumerate(CATEGORIES, 1)], "Wrong category order"
 structure = re.search(r'<ol[^>]*id="report-structure".*?</ol>', html, re.S).group()
 assert structure.count("<li>") == 6, "V6 has six report sections"
 assert "N_sah + N_belum = N" in text
+assert 'id="title-code-guide"' in html
+assert "PU-[KOD TAJUK]-[NN]" in unescape(prompt)
+assert "Bahagian 2A" in unescape(prompt)
+assert not re.search(r"PU-\d+-\d+", text), "Obsolete numeric-only title IDs"
 assert "STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP" in text
 for obsolete in (r"[vV]4\.4\.1", r"\b[Hh]ibrid\b", r"[Mm]aksimum tiga", r"Bahagian 7", r"K1\s*[—–-]\s*Tiada Mandat", r"K2\s*[—–-]\s*Tadbir Urus"):
     assert not re.search(obsolete, text), f"Outdated V4 rule: {obsolete}"
@@ -120,3 +125,4 @@ print(f"PASS: 11 slides; {len(p.ids)} unique IDs; {len(p.copy_targets)} clipboar
 print("PASS: V6 category order, six report sections, risk bands and seven downloads")
 print("PASS: ready Gem CTA, official share URL and optional reference downloads")
 print("PASS: original source hashes, exact V6 clipboard prompt and allowlisted Pages artifact")
+print("PASS: latest Kod Tajuk source revision and meaningful finding IDs")

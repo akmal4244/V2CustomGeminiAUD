@@ -1,5 +1,6 @@
 {
   "version": "V6",
+  "revision": "Kod Tajuk",
   "files": [
     {
       "source": "1. Markah Risiko 4x4.pdf",
@@ -7,24 +8,24 @@
       "sha256": "bca29e979bf2f8f1102d684575d389495a6aa2aac3ad16b7fd8b8f0cff81c75d"
     },
     {
-      "source": "2. Panduan_7_Kategori_Isu_Audit_V6.md",
-      "path": "downloads/Panduan_7_Kategori_Isu_Audit_V6.md",
+      "source": "2. Panduan_7_Kategori_Isu_Audit_V6.txt",
+      "path": "downloads/Panduan_7_Kategori_Isu_Audit_V6.txt",
       "sha256": "5a83d4e17e9c55a467817ad66e0c62bafabe99ea5217e7417fa7e11cc3a6b56f"
     },
     {
-      "source": "3. Panduan_Format_Analisis_Audit_V6.md",
-      "path": "downloads/Panduan_Format_Analisis_Audit_V6.md",
-      "sha256": "6fb40264eb4b016af22a5c786f4f81837c73ba21f8d66a6dc32d7d324ad9d186"
+      "source": "3. Panduan_Format_Analisis_Audit_V6_Kod_Tajuk.txt",
+      "path": "downloads/Panduan_Format_Analisis_Audit_V6_Kod_Tajuk.txt",
+      "sha256": "58bcf98f29a09b163a4cb4f6fbbb593589f034a5a13ddc556ba5b285b1959c82"
     },
     {
-      "source": "4. Instruction_Gem_Penganalisis_Audit_V6.txt",
-      "path": "downloads/Instruction_Gem_Penganalisis_Audit_V6.txt",
-      "sha256": "ede1a2ed0b0e25885779fe15a9422c316b23b435411fe5f2273da79cf72c106e"
+      "source": "4. Instruction_Gem_Penganalisis_Audit_V6_Kod_Tajuk.txt",
+      "path": "downloads/Instruction_Gem_Penganalisis_Audit_V6_Kod_Tajuk.txt",
+      "sha256": "b9e110963a2043a3d526c7249cd3d6b8ef32da719183748dbbaaa7224f275ac7"
     },
     {
-      "source": "5. Prompt Kali Pertama Nak Analisis.txt",
-      "path": "downloads/Prompt_Pertama_Analisis_V6.txt",
-      "sha256": "a9ac44be95a208c28c8b8c643e7ec27350f222a159d49b35e6899bacbbf6e111"
+      "source": "5. Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt",
+      "path": "downloads/Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt",
+      "sha256": "8243aac4137c70dc444432e589f0b9d46a9923d28794d054bdf73e1e0549c272"
     }
   ]
 }
