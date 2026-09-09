@@ -70,7 +70,11 @@ for obsolete in ("Bina Gem sendiri", "bina Gem,", "Gem baharu / New Gem", "Buka 
     assert obsolete not in text, f"Obsolete participant setup step: {obsolete}"
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
 assert GEM_URL in readme and "menyediakan Gem sendiri" not in readme
-assert not re.search(r"Rendah\s*[:=(]?\s*1\s*[-–]\s*3\b", text), "Wrong Low band"
+# The supplied image prompt explicitly forbids the old band. Validate its
+# structured mapping below; check the remaining slide text independently.
+without_image = Site()
+without_image.feed(re.sub(r'<pre id="image-prompt"[^>]*>.*?</pre>', '', html, flags=re.S))
+assert not re.search(r"Rendah\s*[:=(]?\s*1\s*[-–]\s*3\b", ' '.join(without_image.text)), "Wrong Low band"
 assert not re.search(r"Sederhana\s*[:=(]?\s*4\s*[-–]\s*8\b", text), "Wrong Moderate band"
 
 for url in p.urls:
@@ -129,14 +133,18 @@ assert "sedia dimasukkan ke templat slaid" in sections[1]
 assert "templat slaid" in sections[11] and "rumusan visual" in sections[11]
 
 image_prompt = unescape(re.search(r'<pre id="image-prompt"[^>]*>(.*?)</pre>', html, re.S).group(1))
-visual = json.loads(image_prompt.removeprefix('```json\n').removesuffix('\n```'))
-assert visual['versi_templat'] == 'V6_Kod_Tajuk_7_Kategori'
-assert visual['taburan_kategori_isu']['kategori_wajib'] == [{'kod': f'K{i}', 'nama': c} for i, c in enumerate(CATEGORIES, 1)]
-assert visual['peraturan_risiko_4x4']['julat'] == {'Rendah': [1, 4], 'Sederhana': [5, 8], 'Tinggi': [9, 12], 'Kritikal': [13, 16]}
-assert visual['kod_tajuk_dan_id']['format_id'] == 'PU-[KOD TAJUK]-[NN]'
-assert 'N_sah = 0' in visual['kelengkapan_penilaian']['statistik_separa']
-assert 'SEPARA — BELUM LENGKAP' in visual['risiko_keseluruhan']['jika_belum_lengkap']
-assert 'tanpa tolok' in visual['risiko_keseluruhan']['jika_belum_lengkap']
+raw_image_json = image_prompt.removeprefix('```json\n').removesuffix('\n```')
+visual = json.loads(raw_image_json)
+# Exact user-supplied image prompt, with line endings normalized to LF.
+assert hashlib.sha256(raw_image_json.encode('utf-8')).hexdigest() == '82451f61c5278c187f36095d2dc543785e04ae9c47f8c728c038a9fa56202681'
+assert visual['versi_templat'] == '6.0_dinamik_7kategori_risiko4x4_kodtajuk'
+assert visual['taburan_kategori_isu_v6']['kategori_standard'] == [f'K{i} {c.upper()}' for i, c in enumerate(CATEGORIES, 1)]
+assert visual['peraturan_risiko_4x4_v6']['pemetaan_tahap_risiko'] == {'RENDAH': '1 hingga 4', 'SEDERHANA': '5 hingga 8', 'TINGGI': '9 hingga 12', 'KRITIKAL': '13 hingga 16'}
+assert visual['logik_kelengkapan_risiko_v6']['formula'] == 'N_sah + N_belum = N'
+assert visual['panel_risiko_keseluruhan_dinamik']['jika_penilaian_separa']['visual'] == 'kad_status_bukan_tolok'
+assert visual['panel_risiko_keseluruhan_dinamik']['jika_penilaian_separa']['status'] == 'SEPARA — BELUM LENGKAP'
+assert visual['tajuk_imej']['subtajuk_dinamik']['jika_tiada_markah_rasmi_langsung'] == 'PENEMUAN & RISIKO AUDIT'
+assert "Jika markah atau penarafan rasmi tidak wujud, buang terus medan Prestasi daripada kad." in visual['kad_dinamik_tajuk_audit']['logik_paparan_prestasi']
 
 workflow = (ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8")
 assert "path: _site" in workflow and "include-hidden-files: true" not in workflow

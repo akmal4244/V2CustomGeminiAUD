@@ -34,6 +34,8 @@ Pautan [templat pembentangan asal](https://docs.google.com/presentation/d/1qAY56
 
 Gem audit menjalankan analisis V6. Bonus 10 dan slaid 10 ialah penyusunan bahan pembentangan selepas semakan juruaudit, dalam sembang Gemini baharu. Prompt JSON ialah arahan penjanaan imej yang dihantar bersama analisis yang disemak. Ia mengekalkan Kod Tajuk/ID, kategori dan status SEPARA jika risiko belum lengkap; visual tidak menggantikan daftar penuh serta bukti sumber.
 
+Prompt gambar pada slaid 10 menggunakan teks V6 yang dibekalkan pengguna, versi `6.0_dinamik_7kategori_risiko4x4_kodtajuk`. Butang **Salin Prompt JSON** menyalin keseluruhan prompt. Kad prestasi dipaparkan hanya apabila markah atau penarafan rasmi wujud; tiada label gantian untuk tajuk tanpa markah. Kad kategori mengikut K1–K7, dan penilaian belum lengkap menggunakan kad status SEPARA tanpa tolok risiko keseluruhan muktamad.
+
 ## Kaedah V6 Kod Tajuk
 
 Bahagian 2A menetapkan Kod Tajuk bermakna, unik dan berasaskan tema audit sebenar serta singkatan Entiti/PTj jika perlu. Kekalkan kod dalam Bahagian 2B hingga Bahagian 6. ID Penemuan menggunakan `PU-[KOD TAJUK]-[NN]`, dengan nombor turutan dua digit; kod dalam ID mesti sepadan tepat dengan Bahagian 2A. Contoh kaedah: `PKEND` → `PU-PKEND-01`. Kod Tajuk berbeza daripada kategori K1–K7.

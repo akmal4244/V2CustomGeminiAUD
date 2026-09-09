@@ -2633,153 +2633,347 @@ Cadangan pengurusan mengikut isu serta bukti, merujuk ID yang sama; tiada bilang
           </ol>
           <div class="prompt-box">
             <div class="prompt-top">
-              <span>Prompt JSON V6 untuk Gemini Image</span>
+              <span>Prompt JSON V6 · 7 Kategori · Kod Tajuk</span>
               <button class="btn" type="button" data-copy-target="image-prompt">Salin Prompt JSON</button>
             </div>
             <pre id="image-prompt" tabindex="0">```json
 {
-  "arahan_paling_utama": "Jana satu imej infografik papan pemuka berdasarkan analisis V6 yang telah disemak juruaudit dan dilampirkan bersama prompt ini. Gunakan sembang Gemini baharu dengan penjanaan imej. Jika analisis tiada atau bercanggah, minta analisis yang dibetulkan dahulu. Selepas input mencukupi, hasilkan imej, bukan JSON balasan.",
-  "jenis_hasil": "imej_papan_pemuka_rumusan_prestasi_dan_risiko_audit",
-  "versi_templat": "V6_Kod_Tajuk_7_Kategori",
-  "bahasa": {
-    "locale": "ms-MY",
-    "arahan": "Semua tajuk, label, angka dan rumusan menggunakan Bahasa Melayu Malaysia yang profesional, tepat dan mudah dibaca."
-  },
-  "sumber_data_wajib": {
-    "input_utama": "Analisis penuh V6 yang telah disemak juruaudit, dilampirkan atau ditampal bersama prompt ini.",
-    "arahan": [
-      "Gunakan hanya fakta, angka, kategori, risiko, markah rasmi dan cadangan yang telah disahkan dalam analisis.",
-      "Jangan mencipta institusi, tajuk, penemuan, amaun, markah, skor, tahap, punca, tarikh, status tindakan atau bukti.",
-      "Jika markah rasmi tiada, paparkan Tiada Markah Rasmi. Bezakan markah prestasi rasmi daripada skor risiko L × I.",
-      "Kekalkan batasan dokumen, label DRAF SEBAHAGIAN dan status penilaian belum lengkap jika dinyatakan.",
-      "Jika analisis mengandungi percanggahan ID, jumlah, kategori atau pengiraan, minta semakan juruaudit; jangan membetulkan fakta dengan andaian."
-    ]
-  },
-  "media_hasil": {
-    "jenis": "satu imej",
-    "nisbah": "16:9",
-    "orientasi": "melintang",
-    "kualiti": "resolusi tinggi; teks tajam dan mudah dibaca"
-  },
-  "tajuk_imej": {
-    "tajuk_utama": "RUMUSAN",
-    "subtajuk": "PRESTASI &amp; RISIKO AUDIT",
-    "nama_entiti": "Ambil daripada analisis yang disemak",
-    "tempoh": "Ambil daripada analisis; jika tiada, nyatakan Tidak dinyatakan"
-  },
-  "reka_bentuk_rujukan": {
-    "susun_atur": "Tajuk di atas; kad tajuk pengauditan dinamik; taburan tujuh kategori di bawah kiri; panel status risiko di bawah tengah; ringkasan eksekutif dan fokus pengurusan di bawah kanan.",
-    "latar": "putih bersih dengan tona lembut",
-    "warna_utama": "biru tua korporat",
-    "kad": "putih, sudut membulat, garisan nipis dan bayang lembut",
-    "ikon": "ikon vektor kemas",
-    "tipografi": "tajuk besar, angka jelas, isi ringkas; jangan mengecilkan teks sehingga sukar dibaca"
-  },
-  "kod_tajuk_dan_id": {
-    "sumber_kod": "Kod Tajuk yang telah ditetapkan dalam Bahagian 2A",
-    "format_id": "PU-[KOD TAJUK]-[NN]",
-    "arahan": "Kekalkan Kod Tajuk dan ID asal. Kod dalam ID mesti sama tepat dengan Bahagian 2A dan konsisten dalam Bahagian 2B hingga 6. Jangan cipta kod atau ID baharu. Kod Tajuk berbeza daripada kategori K1–K7."
-  },
-  "kad_dinamik": {
-    "bilangan": "Mengikut tajuk sebenar dalam analisis; tiada bilangan kad tetap.",
-    "kandungan": [
-      "Kod Tajuk dan nama tajuk",
-      "Bilangan penemuan",
-      "Markah rasmi jika dinyatakan",
-      "Risiko atau status yang disahkan",
-      "ID penemuan utama yang diringkaskan"
-    ],
-    "jika_ruang_terhad": "Label kad terpilih sebagai PETIKAN dan nyatakan bilangan tajuk yang dipaparkan daripada jumlah sebenar. Kekalkan jumlah keseluruhan daripada daftar penuh; jangan gugurkan ID daripada analisis atau mengubah N."
-  },
-  "taburan_kategori_isu": {
-    "kategori_wajib": [
-      {
-        "kod": "K1",
-        "nama": "Tadbir Urus"
-      },
-      {
-        "kod": "K2",
-        "nama": "Tiada Mandat"
-      },
-      {
-        "kod": "K3",
-        "nama": "Kesilapan / Isu Teknikal"
-      },
-      {
-        "kod": "K4",
-        "nama": "Kecuaian"
-      },
-      {
-        "kod": "K5",
-        "nama": "Pembaziran"
-      },
-      {
-        "kod": "K6",
-        "nama": "Pemborosan"
-      },
-      {
-        "kod": "K7",
-        "nama": "Penyelewengan / Ketirisan"
-      }
-    ],
-    "arahan": "Paparkan semua tujuh kategori termasuk bilangan sifar yang disahkan. Belum dapat dikelaskan — bukti tidak mencukupi ialah status berasingan, bukan K8. Jangan menukar maklumat tidak diketahui menjadi sifar.",
-    "semakan_jumlah": "Jumlah K1–K7 + Belum dapat dikelaskan = N. Kategori ialah jenis isu, bukan susunan tahap risiko."
-  },
-  "peraturan_risiko_4x4": {
-    "formula": "R = L × I",
-    "komponen": "L dan I ialah integer 1–4 berasaskan bukti.",
-    "julat": {
-      "Rendah": [
-        1,
-        4
-      ],
-      "Sederhana": [
-        5,
-        8
-      ],
-      "Tinggi": [
-        9,
-        12
-      ],
-      "Kritikal": [
-        13,
-        16
-      ]
-    },
-    "warna": {
-      "Rendah": "hijau",
-      "Sederhana": "kuning",
-      "Tinggi": "jingga",
-      "Kritikal": "merah",
-      "Belum lengkap": "kelabu dengan label jelas"
-    },
-    "komponen_separa": "Kekalkan L atau I yang disokong bukti. Jika satu komponen tiada, R dan tahap belum dapat ditentukan. Jangan isi sifar, nilai lalai atau anggaran. Skor 4 ialah Rendah."
-  },
-  "kelengkapan_penilaian": {
-    "N": "Semua ID Bahagian 3 = semua penemuan Bahagian 5, termasuk Rendah, tidak berulang, belum dikelaskan dan belum berskor.",
-    "N_sah": "ID dengan kedua-dua L dan I lengkap serta berasaskan bukti.",
-    "N_belum": "ID yang penilaian risikonya belum lengkap.",
-    "semakan": "N_sah + N_belum = N",
-    "paparan": "Paparkan N, N_sah dan N_belum dengan label yang jelas.",
-    "statistik_separa": "Jika N_belum &gt; 0, statistik risiko subset menggunakan penyebut N_sah dan label SEPARA. Jangan menyamakan subset dengan semua penemuan. Jika N_sah = 0, jangan kira peratus atau purata subset."
-  },
-  "risiko_keseluruhan": {
-    "jika_belum_lengkap": "Jika N_belum &gt; 0, paparkan STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP. Gunakan panel status, tanpa tolok atau label tahap keseluruhan muktamad.",
-    "jika_lengkap": "Jika N_belum = 0 dan N &gt; 0, gunakan tahap keseluruhan serta justifikasi yang telah disahkan dalam Bahagian 6 berdasarkan isu Tinggi/Kritikal, risiko tertinggi, pengulangan, impak dan keberkesanan kawalan. Jangan kira tahap baharu dengan purata atau ambang peratus automatik.",
-    "jika_tiada_penemuan": "Jika N = 0, nyatakan tiada penemuan dalam skop analisis; jangan menetapkan Rendah secara automatik."
-  },
-  "rumusan_eksekutif_dan_fokus": {
-    "sumber": "Ringkasan Bahagian 2 dan Bahagian 6 yang telah disemak.",
-    "arahan": "Ringkaskan isu utama dan tindakan tanpa menukar maksud, status atau bukti. Bilangan tindakan mengikut isu dan ruang; label PETIKAN jika terpilih. Setiap tindakan merujuk ID Bahagian 3/5 yang sama.",
-    "isu_belum_lengkap": "Kekalkan isu signifikan belum lengkap sebagai Risiko belum lengkap — maklumat tambahan diperlukan. Jangan melabelnya Tinggi atau Kritikal.",
-    "K7": "Gunakan bahasa berhati-hati bagi Penyelewengan / Ketirisan; jangan membuat tuduhan muktamad tanpa bukti jelas."
-  },
-  "semakan_hasil": [
-    "Tiada tajuk atau nombor contoh rekaan, teks placeholder, ejaan rosak atau label editor dalam imej.",
-    "Kekalkan Kod Tajuk, ID, unit angka, status separa, penyebut statistik dan batasan yang diperlukan untuk memahami visual.",
-    "Rujukan dokumen dan bukti penuh kekal dalam analisis asal serta bahan sokongan pembentangan. Visual ialah ringkasan, tidak menggantikan daftar penuh.",
-    "Juruaudit menyemak semua teks, angka dan padanan dengan analisis sebelum imej digunakan."
-  ]
+"arahan_paling_utama": "JANA IMEJ SEKARANG. Hasil akhir mestilah satu imej infografik papan pemuka sahaja. Jangan hasilkan analisis teks, jangan balas semula JSON, dan jangan beri penerangan bertulis.",
+"jenis_hasil": "imej_papan_pemuka_rumusan_audit_v6",
+"versi_templat": "6.0_dinamik_7kategori_risiko4x4_kodtajuk",
+"bahasa": {
+"locale": "ms-MY",
+"gaya_bahasa": "Bahasa Melayu profesional, Kuala Lumpur, Malaysia",
+"arahan_bahasa": [
+"Semua label dalam imej mesti menggunakan Bahasa Melayu Malaysia.",
+"Jangan guna label Bahasa Inggeris.",
+"Gunakan istilah audit V6 secara konsisten.",
+"Jangan cipta ejaan pelik, singkatan tidak rasmi atau terjemahan yang tidak wujud."
+]
+},
+"sumber_data_wajib": {
+"input_utama": "{{HASIL_ANALISIS_CUSTOM_GEMINI_V6_ATAU_DOKUMEN_ANALISIS_DILAMPIRKAN}}",
+"arahan": [
+"Baca dan fahami keseluruhan hasil analisis V6 atau dokumen analisis yang dilampirkan.",
+"Gunakan hanya maklumat yang benar-benar wujud dalam analisis.",
+"Jangan cipta jabatan, PTj, Kod Tajuk, ID Penemuan, tajuk audit, markah, skor, tahap risiko, jumlah penemuan, amaun, tarikh, status atau rumusan baharu.",
+"Gunakan Kod Tajuk bermakna yang telah wujud dalam analisis V6 jika tersedia.",
+"Jika sesuatu laporan atau tajuk pengauditan tiada markah atau penarafan rasmi, JANGAN paparkan medan Prestasi, Markah, Penarafan, 'Tiada Markah Rasmi' atau 'Analisis Deskriptif' pada imej.",
+"Jika hanya sebahagian tajuk mempunyai markah rasmi, paparkan prestasi hanya pada kad tajuk yang mempunyai markah atau penarafan rasmi; kad lain mesti menyusun semula ruang tanpa ruang kosong atau label gantian.",
+"Jika semua tajuk tiada markah rasmi, jangan gunakan elemen visual prestasi seperti carta donat prestasi, skor prestasi atau panel prestasi.",
+"Jika skor risiko unit tidak jelas atau tidak sah, jangan reka skor.",
+"Jika penilaian risiko unit belum lengkap, paparkan status 'Risiko belum lengkap' hanya jika status tersebut memang relevan dalam analisis V6.",
+"Bersihkan semua rujukan sumber, nota kaki, nombor baris dan tanda petikan sumber sebelum teks dipaparkan dalam imej."
+]
+},
+"media_hasil": {
+"jenis": "satu_imej_sahaja",
+"bukan": [
+"dek slaid",
+"PowerPoint",
+"pembentangan",
+"antara muka editor",
+"analisis teks",
+"JSON balasan"
+],
+"nisbah": "16:9",
+"orientasi": "melintang",
+"kualiti": "resolusi tinggi, tajam, bersih dan mudah dibaca",
+"gaya": "papan pemuka audit korporat, moden, profesional, eksekutif dan bermutu tinggi"
+},
+"tajuk_imej": {
+"tajuk_utama": "RUMUSAN",
+"subtajuk_dinamik": {
+"jika_ada_sekurang_kurangnya_satu_markah_rasmi": "PRESTASI, PENEMUAN &amp; RISIKO AUDIT",
+"jika_tiada_markah_rasmi_langsung": "PENEMUAN &amp; RISIKO AUDIT"
+},
+"nama_institusi": "{{AUTO_EKSTRAK_NAMA_INSTITUSI}}",
+"tahun_atau_tempoh": "{{AUTO_EKSTRAK_TAHUN_ATAU_TEMPOH_ANALISIS}}"
+},
+"reka_bentuk_rujukan": {
+"gaya_yang_dikehendaki": "Tajuk besar di atas, kad tajuk pengauditan dinamik di bahagian atas, taburan 7 kategori isu di bahagian bawah kiri, panel risiko keseluruhan atau status kelengkapan risiko di bawah tengah, dan rumusan eksekutif di bawah kanan.",
+"latar": "putih bersih dengan tona lembut",
+"warna_utama": "biru tua korporat",
+"kad": "kad putih membulat dengan bayang lembut, garisan nipis dan kecerunan lembut",
+"ikon": "ikon vektor besar, moden, kemas dan profesional",
+"tipografi": {
+"tajuk": "besar, tebal, huruf besar",
+"subtajuk": "jelas, kemas dan profesional",
+"nombor": "besar, tebal dan mudah dibaca",
+"isi": "ringkas, padat dan tidak terlalu kecil"
+}
+},
+"label_bahasa_melayu": {
+"kod_tajuk": "Kod Tajuk",
+"prestasi": "Prestasi",
+"tahap_risiko": "Tahap Risiko",
+"penemuan_utama": "Penemuan Utama",
+"isu_berulang": "Isu Berulang",
+"risiko_dominan": "Risiko Dominan",
+"skor_risiko": "Skor Risiko",
+"rumusan_ringkas": "Rumusan Ringkas",
+"rumusan_eksekutif": "Rumusan Eksekutif",
+"tahap_risiko_keseluruhan": "Tahap Risiko Keseluruhan",
+"status_penilaian_risiko": "Status Penilaian Risiko",
+"belum_dikelaskan": "Belum dapat dikelaskan"
+},
+"logik_dinamik": {
+"unit_kad_utama": "TAJUK_PENGAUDITAN",
+"keutamaan_unit_kad": [
+"Gunakan setiap Tajuk Pengauditan sebagai unit kad utama supaya selari dengan Kod Tajuk V6.",
+"Paparkan Kod Tajuk jika tersedia dalam analisis V6.",
+"Paparkan Entiti / PTj sebagai maklumat sokongan jika tersedia.",
+"Jangan menggantikan Tajuk Pengauditan dengan nama PTj sahaja jika Kod Tajuk dan tajuk audit tersedia."
+],
+"bilangan_kad": "AUTO_KIRA berdasarkan jumlah Tajuk Pengauditan sebenar.",
+"susun_atur_kad": {
+"1_3_kad": "Paparkan kad besar dalam satu baris.",
+"4_kad": "Paparkan empat kad dalam satu baris.",
+"5_8_kad": "Paparkan dalam grid dua baris yang kemas.",
+"lebih_8_kad": "Paparkan kad paling material berdasarkan risiko yang sah dan ringkaskan selebihnya tanpa menghilangkan gambaran jumlah keseluruhan."
+}
+},
+"kad_dinamik_tajuk_audit": {
+"sumber": "AUTO_EKSTRAK daripada Bahagian 2A, Bahagian 2B dan Bahagian 5 analisis V6.",
+"ulang_untuk_setiap_tajuk": {
+"kod_tajuk": "{{AUTO_EKSTRAK_KOD_TAJUK_JIKA_ADA}}",
+"tajuk_pengauditan": "{{AUTO_EKSTRAK_TAJUK_PENGAUDITAN}}",
+"entiti_ptj": "{{AUTO_EKSTRAK_ENTITI_PTJ_JIKA_ADA}}",
+"ikon": "{{AUTO_PILIH_IKON_BERDASARKAN_TEMA_TAJUK}}",
+"warna_tema": "{{AUTO_PILIH_WARNA_SESUAI_UNTUK_REKA_BENTUK_SAHAJA}}",
+"prestasi_atau_penarafan": "{{PAPAR_HANYA_JIKA_MARKAH_ATAU_PENARAFAN_RASMI_WUJUD}}",
+"jumlah_penemuan": "{{AUTO_EKSTRAK_JUMLAH_PENEMUAN_TAJUK}}",
+"isu_berulang": "{{AUTO_EKSTRAK_JUMLAH_ISU_BERULANG_JIKA_ADA}}",
+"risiko_dominan": "{{AUTO_EKSTRAK_RISIKO_DOMINAN_SAH_JIKA_TERSEDIA}}",
+"skor_risiko": "{{AUTO_EKSTRAK_SKOR_RISIKO_JIKA_SAH_DAN_JELAS}}",
+"tahap_risiko": "{{AUTO_EKSTRAK_TAHAP_RISIKO_JIKA_SAH}}",
+"status_risiko": "{{AUTO_EKSTRAK_STATUS_RISIKO_JIKA_BELUM_LENGKAP}}",
+"rumusan_ringkas": "{{AUTO_RINGKASKAN_1_ATAU_2_AYAT_BERDASARKAN_DAPATAN_TAJUK}}"
+},
+"logik_paparan_prestasi": [
+"Jika markah atau penarafan rasmi wujud, paparkan medan Prestasi.",
+"Jika markah atau penarafan rasmi tidak wujud, buang terus medan Prestasi daripada kad.",
+"Jangan paparkan 'Tiada Markah Rasmi'.",
+"Jangan paparkan 'Analisis Deskriptif'.",
+"Jangan paparkan tanda sempang, N/A atau ruang kosong sebagai ganti prestasi.",
+"Susun semula elemen kad secara automatik supaya kad tanpa prestasi kekal seimbang."
+],
+"arahan_paparan": [
+"Jangan paparkan teks tema warna dalam kad.",
+"Jangan paparkan skor risiko jika skor tidak sah, tidak lengkap atau tidak jelas.",
+"Jangan letak nombor besar tanpa label yang jelas.",
+"Jika Kod Tajuk tersedia, letakkan sebagai lencana kecil yang jelas.",
+"Setiap kad perlu kemas, seimbang dan mudah dibaca."
+]
+},
+"peraturan_risiko_4x4_v6": {
+"formula": "Risiko = Kemungkinan (L) × Impak (I)",
+"skala_kemungkinan": {
+"1": "Jarang",
+"2": "Mungkin",
+"3": "Berkemungkinan",
+"4": "Kerap"
+},
+"skala_impak": {
+"1": "Kecil",
+"2": "Sederhana",
+"3": "Besar",
+"4": "Bencana"
+},
+"pemetaan_tahap_risiko": {
+"RENDAH": "1 hingga 4",
+"SEDERHANA": "5 hingga 8",
+"TINGGI": "9 hingga 12",
+"KRITIKAL": "13 hingga 16"
+},
+"warna_risiko": {
+"RENDAH": "hijau",
+"SEDERHANA": "coklat keemasan",
+"TINGGI": "jingga",
+"KRITIKAL": "merah"
+},
+"arahan": [
+"Gunakan hanya skor dan tahap risiko yang sah berdasarkan analisis V6.",
+"Jangan kira Skor Risiko jika L atau I belum dapat ditentukan.",
+"Jika laporan sudah memberikan Skor Risiko yang sah, pastikan R = L × I.",
+"Tahap Risiko mesti sepadan dengan julat V6: Rendah 1–4, Sederhana 5–8, Tinggi 9–12, Kritikal 13–16.",
+"Jangan gunakan julat lama Rendah 1–3.",
+"Jangan label risiko sebagai inherent atau residual secara automatik."
+]
+},
+"logik_kelengkapan_risiko_v6": {
+"sumber": "Gunakan N, N_sah dan N_belum daripada analisis V6 jika tersedia.",
+"formula": "N_sah + N_belum = N",
+"jika_n_belum_sifar": [
+"Tahap Risiko Keseluruhan boleh dipaparkan jika analisis V6 telah memuktamadkannya.",
+"Tolok meter risiko keseluruhan boleh digunakan."
+],
+"jika_n_belum_lebih_besar_sifar": [
+"Jangan paparkan Tolok Tahap Risiko Keseluruhan sebagai keputusan muktamad.",
+"Gantikan panel tolok dengan panel 'STATUS PENILAIAN RISIKO: SEPARA — BELUM LENGKAP'.",
+"Paparkan N_sah dan N_belum secara ringkas jika angka tersebut tersedia.",
+"Jika memaparkan taburan risiko subset, labelkan dengan jelas 'SEPARA'.",
+"Jangan mendakwa statistik subset mewakili keseluruhan populasi."
+]
+},
+"taburan_kategori_isu_v6": {
+"tajuk": "TABURAN PENEMUAN AUDIT MENGIKUT 7 KATEGORI ISU",
+"mod": "dinamik",
+"gaya_paparan_wajib": "Kad kategori berlajur dengan ikon, jumlah penemuan dan pecahan risiko yang sah. Jangan gunakan carta batang.",
+"kategori_standard": [
+"K1 TADBIR URUS",
+"K2 TIADA MANDAT",
+"K3 KESILAPAN / ISU TEKNIKAL",
+"K4 KECUAIAN",
+"K5 PEMBAZIRAN",
+"K6 PEMBOROSAN",
+"K7 PENYELEWENGAN / KETIRISAN"
+],
+"status_tambahan_bukan_kategori": "BELUM DAPAT DIKELASKAN — BUKTI TIDAK MENCUKUPI",
+"susun_atur_wajib": {
+"jenis": "lajur_kad_kategori",
+"kepala_panel": "jalur biru tua dengan tajuk putih",
+"susunan": "K1 hingga K7 disusun mengikut urutan rasmi V6; status belum dikelaskan dipaparkan berasingan hanya jika bilangannya lebih daripada sifar.",
+"setiap_lajur_mesti_ada": [
+"kod kategori",
+"nama kategori",
+"ikon kategori",
+"jumlah penemuan",
+"pecahan risiko yang sah jika tersedia"
+],
+"jalur_bawah": "Paparkan JUMLAH KESELURUHAN PENEMUAN: N jika N tersedia."
+},
+"arahan": [
+"Kira jumlah penemuan K1 hingga K7 berdasarkan analisis V6.",
+"Jangan mencipta K8.",
+"Jika ada penemuan 'Belum dapat dikelaskan', paparkan sebagai status berasingan dan bukan kategori.",
+"Pastikan K1 + K2 + K3 + K4 + K5 + K6 + K7 + Belum dapat dikelaskan = N jika semua nilai tersedia.",
+"Paparkan pecahan Rendah, Sederhana, Tinggi dan Kritikal hanya untuk penemuan yang mempunyai risiko lengkap.",
+"Jika N_belum &gt; 0, label pecahan risiko sebagai SEPARA.",
+"Jika nilai sesuatu tahap risiko ialah sifar, jangan paparkan label tersebut.",
+"Jangan gunakan carta batang, carta batang bertindan atau carta batang mendatar."
+],
+"ulang_untuk_setiap_kategori": {
+"kod_kategori": "{{K1_HINGGA_K7}}",
+"nama_kategori": "{{AUTO_EKSTRAK_NAMA_KATEGORI_V6}}",
+"ikon": "{{AUTO_PILIH_IKON_KATEGORI}}",
+"jumlah_penemuan": "{{AUTO_KIRA_PENEMUAN_KATEGORI}}",
+"pecahan_risiko": {
+"kritikal": "{{AUTO_KIRA_KRITIKAL_SAH}}",
+"tinggi": "{{AUTO_KIRA_TINGGI_SAH}}",
+"sederhana": "{{AUTO_KIRA_SEDERHANA_SAH}}",
+"rendah": "{{AUTO_KIRA_RENDAH_SAH}}"
+}
+}
+},
+"panel_risiko_keseluruhan_dinamik": {
+"jika_penilaian_lengkap": {
+"tajuk": "TAHAP RISIKO KESELURUHAN",
+"tahap": "{{AUTO_EKSTRAK_TAHAP_RISIKO_KESELURUHAN_SAH}}",
+"skor": "{{AUTO_EKSTRAK_SKOR_JIKA_ANALISIS_MEMANG_MENYEDIAKANNYA}}",
+"visual": "tolok_meter"
+},
+"jika_penilaian_separa": {
+"tajuk": "STATUS PENILAIAN RISIKO",
+"status": "SEPARA — BELUM LENGKAP",
+"n_sah": "{{AUTO_EKSTRAK_N_SAH}}",
+"n_belum": "{{AUTO_EKSTRAK_N_BELUM}}",
+"visual": "kad_status_bukan_tolok"
+},
+"arahan_paparan": [
+"Jangan paparkan nama warna pada tolok.",
+"Jangan letak label warna pada segmen tolok.",
+"Jangan paparkan tahap risiko keseluruhan muktamad jika N_belum &gt; 0.",
+"Jangan reka skor keseluruhan jika analisis V6 hanya memberikan tahap risiko tanpa skor."
+]
+},
+"rumusan_eksekutif": {
+"tajuk": "RUMUSAN EKSEKUTIF",
+"panjang": "60 hingga 100 patah perkataan",
+"arahan": [
+"Hasilkan rumusan pendek berdasarkan hasil analisis V6 sahaja.",
+"Nyatakan jumlah Penemuan Utama jika tersedia.",
+"Nyatakan kategori isu dominan jika boleh ditentukan.",
+"Nyatakan isu atau Tajuk Pengauditan paling signifikan berdasarkan risiko yang sah.",
+"Jika N_belum = 0, boleh nyatakan Tahap Risiko Keseluruhan yang sah.",
+"Jika N_belum &gt; 0, nyatakan bahawa penilaian risiko keseluruhan masih SEPARA / BELUM LENGKAP dan jangan beri tahap muktamad.",
+"Nyatakan fokus tindakan pengurusan secara ringkas.",
+"Jangan menyebut 'Tiada Markah Rasmi' atau 'Analisis Deskriptif'.",
+"Jika tiada markah rasmi, abaikan terus aspek prestasi daripada rumusan."
+],
+"teks": "{{AUTO_JANA_RUMUSAN_BERDASARKAN_HASIL_ANALISIS_V6}}"
+},
+"gaya_visual": {
+"latar": "putih bersih dengan tona lembut",
+"warna_utama": "biru tua korporat atau warna korporat institusi",
+"kad": "kad putih membulat dengan bayang lembut dan garisan nipis",
+"ikon": "ikon vektor besar, moden dan profesional",
+"grafik_bersyarat": [
+"carta atau indikator prestasi hanya jika markah atau penarafan rasmi benar-benar tersedia",
+"lencana tahap risiko berwarna hanya untuk risiko yang sah",
+"blok statistik jumlah penemuan",
+"tolok meter risiko keseluruhan hanya jika penilaian lengkap",
+"kad status SEPARA jika penilaian risiko keseluruhan belum lengkap",
+"kad kategori berlajur K1 hingga K7"
+],
+"tipografi": {
+"tajuk": "besar, tebal, huruf besar",
+"subtajuk": "tebal, jelas dan profesional",
+"nombor": "besar, tebal dan mudah dibaca",
+"isi": "ringkas, jelas dan tidak terlalu kecil"
+}
+},
+"pembersihan_hasil_imej": {
+"wajib_buang": [
+"rujukan sumber",
+"nota kaki",
+"nombor rujukan",
+"nombor baris",
+"nombor petikan sumber",
+"tanda petikan sumber",
+"teks pemegang tempat",
+"teks teknikal prompt",
+"teks konfigurasi",
+"teks tema warna",
+"label Bahasa Inggeris",
+"nama warna pada tolok",
+"label 'Tiada Markah Rasmi'",
+"label 'Analisis Deskriptif'",
+"medan prestasi kosong",
+"N/A",
+"tanda sempang sebagai ganti markah"
+],
+"arahan": [
+"Data boleh digunakan daripada laporan, tetapi semua rujukan sumber mesti dibersihkan sebelum dipaparkan.",
+"Jangan paparkan sebarang nombor rujukan atau nota sumber.",
+"Jangan paparkan teks tema warna.",
+"Jangan paparkan teks pemegang tempat atau arahan prompt.",
+"Jangan paparkan label Bahasa Inggeris.",
+"Jika markah rasmi tiada, buang keseluruhan komponen prestasi dan rapatkan semula susun atur."
+]
+},
+"larangan_v6": [
+"Jangan balas semula JSON.",
+"Jangan hasilkan analisis teks.",
+"Jangan tetapkan bilangan kad secara tetap.",
+"Jangan reka data yang tiada dalam hasil analisis.",
+"Jangan paparkan 'Tiada Markah Rasmi' atau 'Analisis Deskriptif' dalam imej.",
+"Jangan paparkan elemen prestasi bagi tajuk yang tiada markah atau penarafan rasmi.",
+"Jangan gunakan kategori lama K1 hingga K5.",
+"Jangan cipta K8.",
+"Jangan gunakan julat risiko lama Rendah 1–3.",
+"Jangan kira Skor Risiko jika L atau I belum lengkap.",
+"Jangan paparkan Tahap Risiko Keseluruhan muktamad jika N_belum &gt; 0.",
+"Jangan gunakan tolok risiko keseluruhan jika penilaian keseluruhan masih SEPARA.",
+"Jangan masukkan terlalu banyak teks sehingga imej nampak semak.",
+"Jangan hasilkan paparan seperti slaid PowerPoint.",
+"Jangan gunakan label risiko yang bercanggah dengan analisis V6.",
+"Jangan tukar maksud dapatan audit.",
+"Jangan paparkan rujukan sumber, nota kaki, nombor baris atau nombor petikan.",
+"Jangan gunakan carta batang untuk taburan kategori isu.",
+"Jangan tulis nama warna pada tolok atau lencana risiko."
+],
+"prompt_image_final": "Jana satu imej infografik papan pemuka audit 16:9 sekarang berdasarkan hasil analisis V6 yang diberikan. Hasil akhir mestilah imej sahaja. Gunakan Bahasa Melayu Malaysia yang profesional. Paparkan setiap Tajuk Pengauditan sebagai kad utama dan gunakan Kod Tajuk bermakna jika tersedia. Jika sesuatu tajuk mempunyai markah atau penarafan rasmi, paparkan prestasi; jika tiada markah rasmi, JANGAN paparkan langsung medan Prestasi, Markah, Penarafan, 'Tiada Markah Rasmi', 'Analisis Deskriptif', N/A atau ruang gantian. Susun semula kad secara automatik supaya kekal seimbang. Bahagian bawah kiri mesti memaparkan taburan Penemuan Utama mengikut tujuh kategori V6: K1 Tadbir Urus, K2 Tiada Mandat, K3 Kesilapan / Isu Teknikal, K4 Kecuaian, K5 Pembaziran, K6 Pemborosan dan K7 Penyelewengan / Ketirisan. Jika terdapat status 'Belum dapat dikelaskan — bukti tidak mencukupi', paparkan berasingan dan jangan jadikan K8. Gunakan matriks risiko 4×4 V6: Rendah 1–4, Sederhana 5–8, Tinggi 9–12 dan Kritikal 13–16. Jika N_belum = 0, panel bawah tengah boleh memaparkan tolok Tahap Risiko Keseluruhan yang sah. Jika N_belum &gt; 0, jangan paparkan tolok atau tahap risiko keseluruhan muktamad; gantikan dengan kad 'STATUS PENILAIAN RISIKO: SEPARA — BELUM LENGKAP' dan paparkan N_sah serta N_belum jika tersedia. Bahagian bawah kanan memaparkan Rumusan Eksekutif ringkas berdasarkan analisis V6. Jangan reka skor, markah, kategori, jumlah, amaun, tarikh, status, Kod Tajuk atau tahap risiko. Jangan paparkan rujukan sumber, nota kaki, nombor rujukan, nombor baris, teks prompt, teks konfigurasi, label Bahasa Inggeris atau nama warna pada tolok. Reka bentuk mesti bersih, moden, korporat, profesional, jelas dibaca dan sesuai untuk laporan audit universiti."
 }
 ```</pre>
           </div>
