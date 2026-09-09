@@ -1,0 +1,4 @@
+# Preserve the original V6 download bytes, including source line endings.
+downloads/* -text whitespace=cr-at-eol
+# Markdown source uses two trailing spaces for intentional hard line breaks.
+downloads/*.md whitespace=-blank-at-eol,cr-at-eol

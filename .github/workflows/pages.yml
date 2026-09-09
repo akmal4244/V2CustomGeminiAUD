@@ -1,4 +1,4 @@
-name: Deploy V2 training site to Pages
+name: Deploy Gem V6 training site to Pages
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
           mkdir -p _site/assets _site/downloads
           cp index.html .nojekyll _site/
           cp assets/jata-negara.svg assets/mohamad-nurakmal.png assets/slide-gems-qr.png _site/assets/
-          for file in Arahan_Gem_v4.4.1.md Panduan_Format_Analisis_Audit_v4.4.1.md Panduan_7_Kategori_Isu_Audit_v4.4.1.md Rangka_Pembentangan_v4.4.1.md Contoh_Latihan_Sintetik_v4.4.1.md; do
+          for file in Markah_Risiko_4x4.pdf Panduan_7_Kategori_Isu_Audit_V6.md Panduan_Format_Analisis_Audit_V6.md Instruction_Gem_Penganalisis_Audit_V6.txt Prompt_Pertama_Analisis_V6.txt Contoh_Latihan_Sintetik_V6.md Templat_Fokus_Pengurusan_V6.md manifest-v6.json; do
             cp "downloads/$file" _site/downloads/
           done
 

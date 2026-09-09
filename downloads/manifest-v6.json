@@ -1,0 +1,30 @@
+{
+  "version": "V6",
+  "files": [
+    {
+      "source": "1. Markah Risiko 4x4.pdf",
+      "path": "downloads/Markah_Risiko_4x4.pdf",
+      "sha256": "bca29e979bf2f8f1102d684575d389495a6aa2aac3ad16b7fd8b8f0cff81c75d"
+    },
+    {
+      "source": "2. Panduan_7_Kategori_Isu_Audit_V6.md",
+      "path": "downloads/Panduan_7_Kategori_Isu_Audit_V6.md",
+      "sha256": "5a83d4e17e9c55a467817ad66e0c62bafabe99ea5217e7417fa7e11cc3a6b56f"
+    },
+    {
+      "source": "3. Panduan_Format_Analisis_Audit_V6.md",
+      "path": "downloads/Panduan_Format_Analisis_Audit_V6.md",
+      "sha256": "6fb40264eb4b016af22a5c786f4f81837c73ba21f8d66a6dc32d7d324ad9d186"
+    },
+    {
+      "source": "4. Instruction_Gem_Penganalisis_Audit_V6.txt",
+      "path": "downloads/Instruction_Gem_Penganalisis_Audit_V6.txt",
+      "sha256": "ede1a2ed0b0e25885779fe15a9422c316b23b435411fe5f2273da79cf72c106e"
+    },
+    {
+      "source": "5. Prompt Kali Pertama Nak Analisis.txt",
+      "path": "downloads/Prompt_Pertama_Analisis_V6.txt",
+      "sha256": "a9ac44be95a208c28c8b8c643e7ec27350f222a159d49b35e6899bacbbf6e111"
+    }
+  ]
+}
