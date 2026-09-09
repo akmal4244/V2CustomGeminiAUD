@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>V2 • Gem V6 • Kod Tajuk — Analisis Laporan Audit</title>
-  <meta name="description" content="Latihan Gem V6 Kod Tajuk: kod pengauditan bermakna, tujuh kategori isu audit, enam bahagian laporan, semakan kelengkapan risiko dan bahan muat turun. Semua contoh latihan adalah sintetik.">
+  <title>Custom Gemini V6 Kod Tajuk untuk Analisis Laporan Audit</title>
+  <meta name="description" content="Panduan latihan Custom Gemini V6 Kod Tajuk: 7 kategori, analisis audit, semakan juruaudit, templat slaid dan rumusan visual.">
   <link rel="icon" href="assets/jata-negara.svg" type="image/svg+xml">
   <style>
     :root {
@@ -2022,24 +2022,16 @@
       }
     }
 
-    /* V2: preserve the deck shell; long guidance scrolls inside each slide. */
-    .content-card {
-      width: min(980px, 100%);
-      overscroll-behavior-y: contain;
-      scrollbar-gutter: stable;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
-
-    .hero-grid,
-    .two-col {
-      overflow-y: auto;
-      overscroll-behavior-y: contain;
-    }
-
-    .hero-grid > .signal-card,
-    .two-col > .signal-card {
-      min-height: 420px;
-    }
-
     .guidance {
       margin-top: 16px;
       border: 1px solid var(--line);
@@ -2068,44 +2060,6 @@
     .category-definitions { margin: 0; }
     .category-definitions dt { margin-top: 14px; color: #174569; font-weight: 850; }
     .category-definitions dd { margin: 6px 0 0; color: var(--muted); line-height: 1.5; }
-    .version-label { margin-bottom: 14px; }
-    .download-list { display: grid; gap: 10px; margin-top: 18px; }
-    .download-list .btn { justify-content: flex-start; overflow-wrap: anywhere; }
-    .compact-note { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
-    .bonus-prompt-stack { gap: 0; }
-    .bonus-prompt-stack .guidance { margin-top: 10px; }
-    .bonus-prompt-stack pre { max-height: min(40svh, 340px); overflow: auto; }
-    .content-card.prompt-slide { display: block; overflow-y: auto; }
-    .prompt-slide .prompt-box { display: block; }
-    .prompt-slide pre { max-height: min(48svh, 440px); overflow: auto; }
-    .hero-topic-row { flex-wrap: wrap; }
-    .slide-dot { flex-shrink: 0; }
-
-    @media (max-width: 980px) {
-      .hero-grid > .signal-card,
-      .two-col > .signal-card { min-height: 300px; }
-    }
-
-    @media (max-width: 640px) {
-      .hero-grid > .signal-card,
-      .two-col > .signal-card { min-height: 0; }
-      .guidance > summary { padding: 12px; }
-      .guidance-body { padding-inline: 12px; }
-      .content-card.prompt-slide { display: block; }
-      .prompt-slide pre,
-      .guidance pre { max-height: min(48svh, 380px); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -2153,23 +2107,17 @@
       <section class="slide is-active" data-slide="1" aria-labelledby="slide-1-title">
         <div class="hero-grid">
           <div>
-            <p class="eyeline version-label" id="version-label">V2 • Gem V6 • Kod Tajuk</p>
             <h1 class="slide-title" id="slide-1-title">
               <span class="title-line">Custom Gemini</span>
               <span class="title-line is-compact">untuk Analisis Laporan Audit</span>
             </h1>
-            <p class="subtitle">Gem V6 Kod Tajuk untuk analisis audit berasaskan bukti. Buka Gem, muat naik laporan yang dibenarkan organisasi dan jalankan analisis. Tidak perlu membina atau memasang Gem.</p>
-            <div class="actions">
-              <a class="btn primary" id="start-analysis" href="https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing" target="_blank" rel="noopener">Mulakan Analisis dengan Gem V6</a>
-              <a class="btn" href="#3">Panduan penggunaan</a>
-            </div>
-            <p class="compact-note">Log masuk dengan akaun Google yang mempunyai akses. Draf AI wajib disemak juruaudit terhadap sumber asal sebelum penggunaan rasmi.</p>
+            <p class="subtitle">Aliran kerja ringkas untuk universiti awam dan institusi di bawah Kementerian Pendidikan Tinggi, daripada dokumen pengauditan kepada hasil analisis yang seragam, boleh disemak dan sedia dimasukkan ke templat slaid.</p>
             <div class="hero-support">
               <div class="pill-row hero-topic-row" aria-label="Topik utama">
-                <span class="pill">7 kategori • K1–K7</span>
-                <span class="pill">Kod Tajuk • ID konsisten</span>
-                <span class="pill">Risiko 4×4 • Semakan lengkap</span>
-                <span class="pill">Contoh sintetik sahaja</span>
+                <span class="pill">Gem V6 · Kod Tajuk</span>
+                <span class="pill">Laporan Pengauditan</span>
+                <span class="pill">Prompt Standard</span>
+                <span class="pill">Hasil Analisis</span>
               </div>
             </div>
           </div>
@@ -2186,7 +2134,7 @@
                   <span class="nameplate-unit">Unit Audit Dalam, Kementerian Pendidikan Tinggi</span>
                 </div>
                 <div class="gemini-tools">
-                  <a class="gemini-badge gemini-link" href="https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing" target="_blank" rel="noopener" aria-label="Buka Gem V6 yang sudah siap">
+                  <a class="gemini-badge gemini-link" href="https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing" target="_blank" rel="noopener" aria-label="Buka Custom Gemini">
                     <svg class="gemini-mark" viewBox="0 0 24 24" aria-hidden="true">
                       <defs>
                         <linearGradient id="geminiGradient" x1="3" y1="21" x2="21" y2="3" gradientUnits="userSpaceOnUse">
@@ -2199,7 +2147,7 @@
                     </svg>
                     <span>Gemini</span>
                   </a>
-                  <button class="qr-trigger" type="button" data-open-qr aria-label="Buka QR bahan latihan V2" aria-haspopup="dialog" aria-controls="qrDialog">
+                  <button class="qr-trigger" type="button" data-open-qr aria-label="Buka QR besar untuk imbas" aria-haspopup="dialog" aria-controls="qrDialog">
                     <img src="assets/slide-gems-qr.png" alt="">
                     <span>QR</span>
                   </button>
@@ -2212,41 +2160,63 @@
 
       <section class="slide" data-slide="2" aria-labelledby="slide-2-title">
         <div class="content-card panel pad objective-slide">
-<p class="eyeline">Tujuan latihan • Kaedah V6</p><h2 class="slide-title small one-line-title" id="slide-2-title">Bukti dahulu, kategori kemudian</h2><p class="subtitle">Lapan langkah amali: buka Gem, muat naik dokumen, gunakan prompt V6, semak struktur, tanya susulan, sahkan bukti, tentukan fokus pengurusan dan semak kelengkapan risiko.</p><ol class="number-list"><li><span><strong>K1 — Tadbir Urus; K2 — Tiada Mandat.</strong> Gunakan susunan tujuh kategori V6 dan satu kategori utama berdasarkan punca dominan yang disokong bukti.</span></li><li><span><strong>Set ID Bahagian 3 = Bahagian 5.</strong> Kekalkan satu baris setiap ID, termasuk Rendah, tidak berulang, belum dikelaskan atau belum berskor.</span></li><li><span><strong>N_sah + N_belum = N.</strong> Kekalkan nilai L atau I yang mempunyai bukti. Jika risiko belum lengkap, laporkan status SEPARA — BELUM LENGKAP.</span></li></ol><details class="guidance" id="category-guide"><summary>Baca definisi tujuh kategori • K1 → K7</summary><div class="guidance-body"><dl class="category-definitions"><dt>K1 — Tadbir Urus</dt><dd>Kelemahan struktur tadbir urus, dasar, SOP, penyelarasan, pemantauan atau akauntabiliti. Bezakan kawalan tidak memadai (K1) daripada tanggungjawab jelas yang tidak dilaksanakan (K4).</dd><dt>K2 — Tiada Mandat</dt><dd>Ketiadaan, ketidakjelasan atau ketidakcukupan kuasa, mandat, kelulusan, surat lantikan atau perwakilan kuasa rasmi. Sokong pengelasan dengan bukti; dokumen tidak dikemukakan tidak semestinya membuktikan kuasa tiada.</dd><dt>K3 — Kesilapan / Isu Teknikal</dt><dd>Kesilapan rekod, data, dokumen, sistem, pengiraan atau proses teknikal. Jangan menganggap setiap ralat sebagai kecuaian.</dd><dt>K4 — Kecuaian</dt><dd>Tugas atau kawalan yang jelas tidak dilaksanakan dengan teliti, lewat, tidak disemak atau tiada tindakan susulan. Nyatakan kewajipan dan bukti kegagalan.</dd><dt>K5 — Pembaziran</dt><dd>Wang, aset, masa atau sumber digunakan tetapi manfaat sepatutnya tidak diperoleh atau sumber menjadi sia-sia. Gunakan bukti penggunaan dan manfaat.</dd><dt>K6 — Pemborosan</dt><dd>Kos, kuantiti atau penggunaan sumber berlebihan berbanding keperluan munasabah walaupun masih berguna. Amaun besar sahaja tidak membuktikan pemborosan.</dd><dt>K7 — Penyelewengan / Ketirisan</dt><dd>Bukti atau petunjuk risiko salah guna, manipulasi, transaksi meragukan atau ketirisan. Gunakan bahasa berhati-hati dan nyatakan keperluan semakan lanjut; jangan membuat tuduhan muktamad tanpa bukti jelas.</dd></dl><p><strong>Satu kategori utama bagi setiap ID.</strong> Kategori dan tahap risiko ialah dua dimensi berbeza. “Belum dapat dikelaskan — bukti tidak mencukupi” ialah status, bukan K8.</p></div></details>
+          <p class="eyeline">Tujuan Mengajar</p>
+          <h2 class="slide-title small one-line-title" id="slide-2-title">Custom Gemini langkah demi langkah</h2>
+          <p class="subtitle">Slaid ini ialah panduan latihan amali untuk membantu warga UAD membuat analisis laporan audit menggunakan Custom Gemini, daripada membuka pautan hingga hasil analisis sedia dibentangkan.</p>
+          <ol class="number-list">
+            <li>Memahami tujuan latihan: menghasilkan analisis laporan audit yang seragam, boleh disemak dan mudah dibentangkan.</li>
+            <li>Buka Custom Gemini V6 yang disediakan; gunakan model penaakulan / Pro jika tersedia pada akaun.</li>
+            <li>Muat naik dokumen sesi semasa bagi entiti yang sama; beberapa tajuk audit boleh dianalisis bersama.</li>
+            <li>Gunakan prompt standard V6, kemudian semak enam bahagian wajib serta Kod Tajuk dalam Bahagian 2A.</li>
+            <li>Sahkan ID penemuan, tujuh kategori, isu berulang, bukti, kelengkapan risiko dan cadangan pengurusan.</li>
+            <li>Pindahkan analisis yang disemak ke templat slaid dan jana rumusan visual dalam sembang Gemini baharu.</li>
+          </ol>
         </div>
       </section>
 
       <section class="slide" data-slide="3" aria-labelledby="slide-3-title">
-        <div class="content-card panel pad">
-          <p class="eyeline">Langkah 1 / 8 • Gem sudah siap</p>
-          <h2 class="slide-title small one-line-title" id="slide-3-title">Buka dan gunakan Gem V6</h2>
-          <p class="subtitle">Gunakan Gem V6 yang telah disediakan. Anda tidak perlu mencipta Gem, menyalin arahan ke tetapan atau memasang knowledge.</p>
-          <div class="actions">
-            <a class="btn primary" id="gem-access" href="https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing" target="_blank" rel="noopener">Buka Gem V6</a>
-            <button class="btn" type="button" data-copy-target="gem-link">Salin pautan Gem V6</button>
+        <div class="two-col">
+          <div>
+            <p class="eyeline">Langkah 1 / 8 - Akses Custom Gemini V6</p>
+            <h2 class="slide-title small one-line-title" id="slide-3-title">Buka Custom Gemini V6</h2>
+            <p class="subtitle">Buka Gem “Analisis Penuh - V6 - 7 Kategori” yang telah disediakan. Log masuk dengan akaun Google yang mempunyai akses, kemudian gunakan perbualan Gem untuk analisis.</p>
+            <div class="model-requirement" role="note" aria-label="Panduan penggunaan Gem V6">
+              <strong>V6</strong>
+              <span>Gunakan model penaakulan / Pro jika tersedia. Selepas memuat naik laporan, hantar Prompt Penuh pada slaid 5.</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing" target="_blank" rel="noopener">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
+                Buka Gemini V6
+              </a>
+              <button class="btn" type="button" data-copy-target="gem-link">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                Salin Pautan
+              </button>
+            </div>
           </div>
-          <pre id="gem-link" tabindex="0" aria-label="Pautan Gem V6">https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing</pre>
-          <ol class="number-list" id="gem-usage">
-            <li><span>Buka Gem melalui butang di atas dan log masuk dengan <strong>akaun Google yang mempunyai akses</strong>. Jika akses ditolak, semak akaun atau hubungi pemilik; akses tertakluk pada kebenaran perkongsian.</span></li>
-            <li><span>Muat naik <strong>laporan yang dibenarkan organisasi</strong> dalam perbualan Gem. Semak sumber dan skop seperti <a href="#4">slaid 4</a>; jangan muat naik bahan terperingkat tanpa kebenaran.</span></li>
-            <li><span>Salin <a href="#5"><strong>Prompt Penuh pada slaid 5</strong></a> ke perbualan yang sama dan hantar untuk menjalankan analisis. Semak draf serta rujukan bukti sebelum digunakan.</span></li>
-          </ol>
-          <p class="compact-note">Gunakan model penaakulan/Pro jika tersedia. Nama model, akses Gems dan had fail bergantung pada akaun; model berbayar bukan jaminan ketepatan.</p>
-          <details class="guidance" id="gem-downloads"><summary>Rujukan / sandaran pilihan • 5 fail Gem V6 • Kod Tajuk</summary><div class="guidance-body"><p>Lima fail sumber terkini V6 Kod Tajuk tersedia di sini. Kandungan fail dikekalkan seperti bahan asal; peserta boleh terus menggunakan Gem yang disediakan.</p><div class="actions"><a class="btn" href="downloads/Markah_Risiko_4x4.pdf" download>Matriks risiko 4×4 (.pdf)</a><a class="btn" href="downloads/Panduan_7_Kategori_Isu_Audit_V6.txt" download>Panduan 7 kategori V6 (.txt)</a><a class="btn" href="downloads/Panduan_Format_Analisis_Audit_V6_Kod_Tajuk.txt" download>Panduan format V6 Kod Tajuk (.txt)</a><a class="btn" href="downloads/Instruction_Gem_Penganalisis_Audit_V6_Kod_Tajuk.txt" download>Arahan Gem V6 Kod Tajuk (.txt)</a><a class="btn" href="downloads/Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt" download>Prompt kali pertama V6 Kod Tajuk (.txt)</a></div></div></details>
+          <div class="panel pad">
+            <div class="prompt-box">
+              <div class="prompt-top">Pautan Custom Gemini V6</div>
+              <pre id="gem-link" tabindex="0">https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing</pre>
+            </div>
+            <details class="guidance" id="gem-downloads"><summary>Rujukan / sandaran pilihan • 5 fail Gem V6 • Kod Tajuk</summary><div class="guidance-body"><p>Lima fail sumber terkini V6 Kod Tajuk tersedia di sini. Kandungan fail dikekalkan seperti bahan asal; peserta boleh terus menggunakan Gem yang disediakan.</p><div class="actions"><a class="btn" href="downloads/Markah_Risiko_4x4.pdf" download>Matriks risiko 4×4 (.pdf)</a><a class="btn" href="downloads/Panduan_7_Kategori_Isu_Audit_V6.txt" download>Panduan 7 kategori V6 (.txt)</a><a class="btn" href="downloads/Panduan_Format_Analisis_Audit_V6_Kod_Tajuk.txt" download>Panduan format V6 Kod Tajuk (.txt)</a><a class="btn" href="downloads/Instruction_Gem_Penganalisis_Audit_V6_Kod_Tajuk.txt" download>Arahan Gem V6 Kod Tajuk (.txt)</a><a class="btn" href="downloads/Prompt_Kali_Pertama_Analisis_V6_Kod_Tajuk.txt" download>Prompt kali pertama V6 Kod Tajuk (.txt)</a></div></div></details>
+          </div>
         </div>
       </section>
 
       <section class="slide" data-slide="4" aria-labelledby="slide-4-title">
         <div class="content-card panel pad">
-          <p class="eyeline">Langkah 2 / 8 • Sumber dan skop</p>
-          <h2 class="slide-title small one-line-title" id="slide-4-title">Satu entiti, beberapa tajuk audit</h2>
-          <p class="subtitle">Latihan awam menggunakan Institusi Latihan A (rekaan). Tiada laporan atau dapatan institusi sebenar diterbitkan di laman ini.</p>
+          <p class="eyeline">Langkah 2 / 8 - Muat Naik Dokumen</p>
+          <h2 class="slide-title small one-line-title" id="slide-4-title">Muat naik dokumen tajuk pengauditan</h2>
+          <p class="lead">Gunakan laporan pengauditan bagi entiti yang sama. Bilangan fail dan tajuk mengikut dokumen sebenar; contoh sintetik V6 turut tersedia untuk latihan.</p>
           <ol class="number-list">
-            <li><span>Muat turun contoh sintetik di bawah. Nyatakan <strong>UJIAN SINTETIK</strong> dalam permintaan; contoh bukan laporan audit sebenar.</span></li>
-            <li><span>Bagi kerja sebenar yang dibenarkan, gunakan dokumen sesi semasa sahaja. Beberapa tajuk bagi entiti yang sama boleh dianalisis bersama; asingkan universiti berbeza.</span></li>
-            <li><span>Jalankan <strong>semakan awal dokumen</strong>: semak fail, entiti, tempoh, tajuk, halaman, jadual, lampiran, OCR dan pendua. Bilangan fail tidak semestinya bilangan tajuk.</span></li>
-            <li><span>Jika ada bahagian tidak dapat dibaca, minta salinan jelas atau pecahan fail. Label hasil <strong>DRAF SEBAHAGIAN</strong>; jangan mendakwa liputan lengkap.</span></li>
+            <li>Buka sesi Custom Gemini V6 yang sama dan muat naik dokumen yang dibenarkan organisasi.</li>
+            <li>Beberapa tajuk bagi satu entiti boleh dianalisis bersama. Asingkan universiti atau institusi yang berbeza.</li>
+            <li>Semak entiti, tempoh, tajuk, halaman, jadual, lampiran, OCR dan pendua. Bilangan fail tidak semestinya bilangan tajuk.</li>
+            <li>Tunggu semua fail selesai dimuat naik. Jika kandungan tidak dapat dibaca, minta salinan jelas dan label hasil DRAF SEBAHAGIAN.</li>
           </ol>
+          <div class="callout">Prinsip V6: satu entiti, satu set dokumen sesi semasa; Kod Tajuk unik membezakan setiap tajuk pengauditan.</div>
           <details class="guidance" id="title-code-guide">
             <summary>Kod Tajuk bermakna • Pemetaan ID Penemuan</summary>
             <div class="guidance-body">
@@ -2256,22 +2226,21 @@
               <p><strong>Contoh kaedah sahaja:</strong> Pengurusan Kenderaan → PKEND → PU-PKEND-01. Bagi dua tajuk Pengurusan Pentadbiran dan Kewangan: PPK-PKU → PU-PPK-PKU-01 dan PPK-FKTM → PU-PPK-FKTM-01. Contoh bukan dapatan audit sebenar.</p>
             </div>
           </details>
-          <div class="actions"><a class="btn primary" id="synthetic-download" href="downloads/Contoh_Latihan_Sintetik_V6.md" download>Muat turun latihan sintetik (.md)</a></div>
-          <div class="callout">Samarkan data sensitif sebelum perkongsian. Simpan pemetaan bukti asal secara terkawal; jangan terbitkan nama individu, fail audit sebenar atau keputusan ujian dalaman.</div>
+          <div class="actions"><a class="btn" href="downloads/Contoh_Latihan_Sintetik_V6.md" download>Muat turun contoh latihan sintetik V6</a></div>
         </div>
       </section>
 
       <section class="slide" data-slide="5" aria-labelledby="slide-5-title">
         <div class="content-card panel pad prompt-slide">
           <p class="eyeline">Langkah 3 / 8 - Prompt Standard</p>
-          <h2 class="slide-title small one-line-title" id="slide-5-title">Analisis lengkap, bukan petikan terpilih</h2>
-          <p class="lead">Gunakan dalam Gem V6 yang sudah siap selepas laporan yang dibenarkan dimuat naik. Salin keseluruhan prompt; kotak boleh ditatal tanpa memendekkan teks salinan.</p>
+          <h2 class="slide-title small one-line-title" id="slide-5-title">Prompt penuh untuk semua peserta</h2>
+          <p class="lead">Selepas semua dokumen dimuat naik, salin prompt ini, tampal di Custom Gemini, kemudian tekan Enter untuk memulakan analisis.</p>
           <div class="prompt-box">
             <div class="prompt-top">
-              <span>Prompt analisis V6 Kod Tajuk</span>
+              <span>Pratonton prompt penuh V6 · Kod Tajuk</span>
               <button class="btn gold" type="button" data-copy-target="prompt-full">Salin Prompt Penuh</button>
             </div>
-            <pre id="prompt-full" tabindex="0" aria-label="Prompt analisis V6 Kod Tajuk">Sila jana analisis penuh berdasarkan dokumen pengauditan yang saya muat naik dalam sesi ini sahaja.
+            <pre id="prompt-full" tabindex="0">Sila jana analisis penuh berdasarkan dokumen pengauditan yang saya muat naik dalam sesi ini sahaja.
 
 Ikut aliran wajib berikut:
 
@@ -2476,23 +2445,72 @@ Sebelum memberikan jawapan akhir, semak semula:
 * Kod Tajuk digunakan secara konsisten dalam semua bahagian;
 * setiap ID Penemuan menggunakan format `PU-[KOD TAJUK]-[NN]` dan sepadan dengan Kod Tajuk tajuk berkenaan.</pre>
           </div>
-          <div class="callout">Prompt menyokong arahan Gem, bukan menggantikan dokumen sumber atau semakan juruaudit. Untuk latihan, kekalkan label UJIAN SINTETIK.</div>
+          <div class="callout">Semua peserta menggunakan prompt yang sama supaya hasil analisis lebih seragam.</div>
         </div>
       </section>
 
       <section class="slide" data-slide="6" aria-labelledby="slide-6-title">
-        <div class="content-card panel pad ">
-<p class="eyeline">Langkah 4 / 8 • Semak struktur</p><h2 class="slide-title small one-line-title" id="slide-6-title">Enam bahagian analisis V6</h2><p class="subtitle">Mulakan dengan senarai dokumen sesi semasa. Bilangan tajuk, penemuan dan cadangan mengikut bukti sebenar.</p><ol class="number-list" id="report-structure"><li><span><strong>Tajuk Analisis</strong> — nama entiti, tajuk dan tempoh daripada dokumen.</span></li><li><span><strong>Ringkasan Eksekutif</strong> — 2A menetapkan Kod Tajuk unik; 2B dan naratif menggunakan kod sama, penemuan dan batasan; markah rasmi hanya jika dinyatakan.</span></li><li><span><strong>Analisis Dokumen Pengauditan Mengikut Tajuk dan Register Penemuan Utama</strong> — tajuk berlabel Kod Tajuk; daftar semua ID PU-[KOD TAJUK]-[NN], fakta dan bukti.</span></li><li><span><strong>Analisis Isu Audit Berulang</strong> — persamaan isu, ID dan Kod Tajuk terlibat yang disokong dokumen; jangan mereka pengulangan.</span></li><li><span><strong>Analisis Isu Audit Mengikut 7 Kategori dan Tahap Risiko</strong> — Kod Tajuk dan semua ID Bahagian 3, kategori/status, L, I, R serta justifikasi.</span></li><li><span><strong>Rumusan Keseluruhan, Status/Tahap Risiko Keseluruhan dan Cadangan Fokus Pengurusan</strong> — rumusan bukti, kelengkapan risiko dan tindakan mengikut ID.</span></li></ol><div class="callout" id="qa-summary"><strong>QA dalaman sebelum respons akhir.</strong> Semak Kod Tajuk B2A pada setiap ID, padanan ID B3/B5, liputan K1–K7, N_sah + N_belum = N, L × I, tahap risiko dan semua rujukan. Selepas jadual risiko, paparkan semakan kesepadanan, liputan kategori dan kelengkapan risiko.</div><p class="compact-note">Bahagian 4 ialah analisis tambahan; semua penemuan Bahagian 3 tetap mesti dinilai dalam Bahagian 5.</p>
+        <div class="content-card panel pad">
+          <p class="eyeline">Langkah 4 / 8 - Semak Struktur Hasil</p>
+          <h2 class="slide-title small one-line-title" id="slide-6-title">Semak hasil analisis: mesti ada 6 bahagian</h2>
+          <p class="lead">Hasil analisis Custom Gemini mesti disediakan dalam format yang sama supaya mudah dimasukkan ke dalam slaid.</p>
+          <ol class="number-list" id="report-structure">
+            <li>Tajuk Analisis</li>
+            <li>Ringkasan Eksekutif — 2A Senarai Pengauditan dan Kod Tajuk; 2B Ringkasan Prestasi serta naratif</li>
+            <li>Analisis Dokumen Pengauditan Mengikut Tajuk dan Daftar Penemuan Utama</li>
+            <li>Analisis Isu Audit Berulang</li>
+            <li>Analisis Isu Audit Mengikut 7 Kategori dan Tahap Risiko</li>
+            <li>Rumusan Keseluruhan, Status/Tahap Risiko Keseluruhan dan Cadangan Fokus Pengurusan</li>
+          </ol>
+          <div class="callout">Semak enam bahagian sebelum dipindahkan ke slaid. Kekalkan Kod Tajuk B2A dan ID PU-[KOD TAJUK]-[NN]; semua ID Bahagian 3 mesti muncul dalam Bahagian 5. QA dilaksanakan sebelum respons akhir.</div>
+          <details class="guidance" id="category-guide"><summary>Baca definisi tujuh kategori • K1 → K7</summary><div class="guidance-body"><dl class="category-definitions"><dt>K1 — Tadbir Urus</dt><dd>Kelemahan struktur tadbir urus, dasar, SOP, penyelarasan, pemantauan atau akauntabiliti. Bezakan kawalan tidak memadai (K1) daripada tanggungjawab jelas yang tidak dilaksanakan (K4).</dd><dt>K2 — Tiada Mandat</dt><dd>Ketiadaan, ketidakjelasan atau ketidakcukupan kuasa, mandat, kelulusan, surat lantikan atau perwakilan kuasa rasmi. Sokong pengelasan dengan bukti; dokumen tidak dikemukakan tidak semestinya membuktikan kuasa tiada.</dd><dt>K3 — Kesilapan / Isu Teknikal</dt><dd>Kesilapan rekod, data, dokumen, sistem, pengiraan atau proses teknikal. Jangan menganggap setiap ralat sebagai kecuaian.</dd><dt>K4 — Kecuaian</dt><dd>Tugas atau kawalan yang jelas tidak dilaksanakan dengan teliti, lewat, tidak disemak atau tiada tindakan susulan. Nyatakan kewajipan dan bukti kegagalan.</dd><dt>K5 — Pembaziran</dt><dd>Wang, aset, masa atau sumber digunakan tetapi manfaat sepatutnya tidak diperoleh atau sumber menjadi sia-sia. Gunakan bukti penggunaan dan manfaat.</dd><dt>K6 — Pemborosan</dt><dd>Kos, kuantiti atau penggunaan sumber berlebihan berbanding keperluan munasabah walaupun masih berguna. Amaun besar sahaja tidak membuktikan pemborosan.</dd><dt>K7 — Penyelewengan / Ketirisan</dt><dd>Bukti atau petunjuk risiko salah guna, manipulasi, transaksi meragukan atau ketirisan. Gunakan bahasa berhati-hati dan nyatakan keperluan semakan lanjut; jangan membuat tuduhan muktamad tanpa bukti jelas.</dd></dl><p><strong>Satu kategori utama bagi setiap ID.</strong> Kategori dan tahap risiko ialah dua dimensi berbeza. “Belum dapat dikelaskan — bukti tidak mencukupi” ialah status, bukan K8.</p></div></details>
         </div>
       </section>
 
       <section class="slide" data-slide="7" aria-labelledby="slide-7-title">
-        <div class="content-card panel pad ">
-<p class="eyeline">Langkah 5 / 8 • Analisis susulan</p><h2 class="slide-title small one-line-title" id="slide-7-title">Tanya susulan mengikut keperluan</h2><p class="subtitle">Jawapan susulan dilabel petikan dan mengekalkan ID, sumber serta kaedah V6. Buka prompt yang diperlukan.</p><div class="bonus-prompt-stack"><details class="guidance" id="bonus-details-1"><summary>1. Senarai semua penemuan</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 1</span><button class="btn" type="button" data-copy-target="bonus-prompt-1">Salin Contoh</button></div><pre id="bonus-prompt-1" tabindex="0" aria-label="Prompt susulan 1">Sediakan petikan daftar penuh Bahagian 3 dan penilaian Bahagian 5 V6: ID, tajuk, fakta, kategori/status, L, I, R, tahap, justifikasi dan rujukan. Kekalkan satu baris setiap ID termasuk Rendah, tidak berulang, belum dikelaskan dan belum berskor. Jangan reka maklumat. Set ID mesti sama dengan daftar induk.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-2"><summary>2. Fokus Kritikal dan Tinggi</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 2</span><button class="btn" type="button" data-copy-target="bonus-prompt-2">Salin Contoh</button></div><pre id="bonus-prompt-2" tabindex="0" aria-label="Prompt susulan 2">Sediakan PETIKAN semua ID Kritikal dan Tinggi yang mempunyai skor sah dalam Bahagian 5. Susun Kritikal dahulu, sertakan bukti, L/I/R, kategori dan cadangan tindakan. Jangan ubah N atau padam ID daripada daftar penuh. Nyatakan isu signifikan belum lengkap secara berasingan sebagai “Risiko belum lengkap — maklumat tambahan diperlukan”, tanpa mereka tahap.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-3"><summary>3. Isu audit berulang</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 3</span><button class="btn" type="button" data-copy-target="bonus-prompt-3">Salin Contoh</button></div><pre id="bonus-prompt-3" tabindex="0" aria-label="Prompt susulan 3">Sediakan petikan Bahagian 4 V6: isu berulang, ID, tajuk terlibat, kekerapan, persamaan substantif, bukti dan implikasi. Bezakan isu merentas tajuk daripada sejarah audit yang benar-benar dinyatakan dalam dokumen. Jangan menganggap fail pendua sebagai kejadian baharu atau mereka pengulangan dan punca.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-4"><summary>4. Semakan padanan ID</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 4</span><button class="btn" type="button" data-copy-target="bonus-prompt-4">Salin Contoh</button></div><pre id="bonus-prompt-4" tabindex="0" aria-label="Prompt susulan 4">Semak daftar Bahagian 3 dan Bahagian 5: jumlah ID unik, baris, ID hilang, tambahan dan pendua. Semua ID B3 mesti ada tepat sekali dalam B5 dan sebaliknya. N ialah semua ID B3. Kekalkan ID yang belum dikelaskan atau belum lengkap risikonya. Bezakan kesepadanan ID daripada kelengkapan bukti dan risiko.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-5"><summary>5. Tujuh kategori V6</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 5</span><button class="btn" type="button" data-copy-target="bonus-prompt-5">Salin Contoh</button></div><pre id="bonus-prompt-5" tabindex="0" aria-label="Prompt susulan 5">Sediakan semakan liputan mengikut susunan tepat:
+        <div class="content-card panel pad">
+          <p class="eyeline">Langkah 5 / 8 - Pecahkan Maklumat</p>
+          <h2 class="slide-title small one-line-title" id="slide-7-title">Tanya Custom Gemini untuk memecahkan maklumat</h2>
+          <p class="subtitle">Selepas analisis disediakan, gunakan Bonus 1–9 dalam Gem V6 untuk petikan atau semakan susulan. Bonus 10 digunakan dalam sembang Gemini baharu selepas semakan juruaudit.</p>
+          <div class="bonus-prompt-stack">
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 1 - Senarai semua penemuan</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-1">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-1" tabindex="0">Sediakan petikan daftar penuh Bahagian 3 dan penilaian Bahagian 5 V6: ID, tajuk, fakta, kategori/status, L, I, R, tahap, justifikasi dan rujukan. Kekalkan satu baris setiap ID termasuk Rendah, tidak berulang, belum dikelaskan dan belum berskor. Jangan reka maklumat. Set ID mesti sama dengan daftar induk.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 2 - Fokus Kritikal dan Tinggi</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-2">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-2" tabindex="0">Sediakan PETIKAN semua ID Kritikal dan Tinggi yang mempunyai skor sah dalam Bahagian 5. Susun Kritikal dahulu, sertakan bukti, L/I/R, kategori dan cadangan tindakan. Jangan ubah N atau padam ID daripada daftar penuh. Nyatakan isu signifikan belum lengkap secara berasingan sebagai “Risiko belum lengkap — maklumat tambahan diperlukan”, tanpa mereka tahap.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 3 - Isu audit berulang</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-3">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-3" tabindex="0">Sediakan petikan Bahagian 4 V6: isu berulang, ID, tajuk terlibat, kekerapan, persamaan substantif, bukti dan implikasi. Bezakan isu merentas tajuk daripada sejarah audit yang benar-benar dinyatakan dalam dokumen. Jangan menganggap fail pendua sebagai kejadian baharu atau mereka pengulangan dan punca.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 4 - Semakan padanan ID</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-4">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-4" tabindex="0">Semak daftar Bahagian 3 dan Bahagian 5: jumlah ID unik, baris, ID hilang, tambahan dan pendua. Semua ID B3 mesti ada tepat sekali dalam B5 dan sebaliknya. N ialah semua ID B3. Kekalkan ID yang belum dikelaskan atau belum lengkap risikonya. Bezakan kesepadanan ID daripada kelengkapan bukti dan risiko.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 5 - Taburan kategori isu audit</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-5">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-5" tabindex="0">Sediakan semakan liputan mengikut susunan tepat:
 K1 — Tadbir Urus
 K2 — Tiada Mandat
 K3 — Kesilapan / Isu Teknikal
@@ -2501,18 +2519,75 @@ K5 — Pembaziran
 K6 — Pemborosan
 K7 — Penyelewengan / Ketirisan
 Nyatakan bilangan dan ID bagi setiap kategori termasuk sifar. Laporkan “Belum dapat dikelaskan — bukti tidak mencukupi” berasingan, bukan K8. Semak K1 + K2 + K3 + K4 + K5 + K6 + K7 + Belum dapat dikelaskan = N. Satu kategori utama setiap ID; jangan paksa kategori dominan apabila bukti tidak memadai.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-6"><summary>6. Cadangan fokus pengurusan</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 6</span><button class="btn" type="button" data-copy-target="bonus-prompt-6">Salin Contoh</button></div><pre id="bonus-prompt-6" tabindex="0" aria-label="Prompt susulan 6">Sediakan petikan Bahagian 6 V6 dengan jadual Keutamaan, ID Penemuan, Isu Yang Perlu Difokuskan, Tahap/Status Risiko, Sebab Menjadi Keutamaan dan Cadangan Tindakan Pengurusan. Liputi isu Kritikal, Tinggi, berulang signifikan dan isu penting belum lengkap yang memerlukan maklumat lanjut. Bilangan cadangan mengikut bukti. Semua ID mesti wujud dalam B3/B5; jangan cipta tahap risiko atau isu baharu.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-7"><summary>7. Ringkasan eksekutif</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 7</span><button class="btn" type="button" data-copy-target="bonus-prompt-7">Salin Contoh</button></div><pre id="bonus-prompt-7" tabindex="0" aria-label="Prompt susulan 7">Sediakan PETIKAN ringkasan eksekutif maksimum 150 patah perkataan daripada analisis V6 yang disemak: entiti, dokumen/tajuk/ID, kategori dominan jika dapat ditentukan, isu berulang, N_sah, N_belum, status risiko dan fokus pengurusan. Jika N_belum &gt; 0, kekalkan status SEPARA — BELUM LENGKAP dan jangan nyatakan tahap keseluruhan muktamad. Bezakan markah rasmi daripada penilaian risiko.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-8"><summary>8. Semakan bukti dokumen</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 8</span><button class="btn" type="button" data-copy-target="bonus-prompt-8">Salin Contoh</button></div><pre id="bonus-prompt-8" tabindex="0" aria-label="Prompt susulan 8">Semak SEMUA ID: fakta, nama fail, halaman/seksyen sebenar, justifikasi kategori, L dan I serta maklumat tambahan diperlukan. Semak beza K1/K2, K1/K4 dan K5/K6; gunakan bahasa berhati-hati bagi K7. Jangan reka halaman, amaun, tarikh, status atau punca. Kekalkan komponen L atau I yang mempunyai bukti walaupun komponen lain tiada.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-9"><summary>9. Perbandingan tajuk audit</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 9</span><button class="btn" type="button" data-copy-target="bonus-prompt-9">Salin Contoh</button></div><pre id="bonus-prompt-9" tabindex="0" aria-label="Prompt susulan 9">Bandingkan semua tajuk pengauditan bagi entiti sama dalam sesi ini: objektif, skop, markah rasmi jika dinyatakan, bilangan ID, isu utama, isu berulang dan fokus pengurusan. Nyatakan batasan bukti. Jangan campurkan universiti atau dokumen lain, mencipta skor tajuk, atau menyamakan penilaian risiko dengan markah rasmi.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details><details class="guidance" id="bonus-details-10"><summary>10. Lengkapkan penilaian risiko</summary><div class="prompt-box"><div class="prompt-top"><span>Prompt susulan 10</span><button class="btn" type="button" data-copy-target="bonus-prompt-10">Salin Contoh</button></div><pre id="bonus-prompt-10" tabindex="0" aria-label="Prompt susulan 10">Semak kelengkapan penilaian risiko V6. N = semua ID B3 = jumlah penemuan B5; N_sah = ID dengan kedua-dua L dan I berasas; N_belum = ID belum lengkap. Semak N_sah + N_belum = N. Senaraikan ID belum lengkap, komponen tersedia, komponen hilang, sebab dan bukti diperlukan. Kekalkan nilai L/I yang sah. Jika N_belum &gt; 0, statistik subset menggunakan N_sah dan dilabel SEPARA; jangan memuktamadkan risiko keseluruhan. Jika N_sah = 0, jangan kira peratus/purata subset.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details></div>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 6 - Fokus tindakan pengurusan</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-6">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-6" tabindex="0">Sediakan petikan Bahagian 6 V6 dengan jadual Keutamaan, ID Penemuan, Isu Yang Perlu Difokuskan, Tahap/Status Risiko, Sebab Menjadi Keutamaan dan Cadangan Tindakan Pengurusan. Liputi isu Kritikal, Tinggi, berulang signifikan dan isu penting belum lengkap yang memerlukan maklumat lanjut. Bilangan cadangan mengikut bukti. Semua ID mesti wujud dalam B3/B5; jangan cipta tahap risiko atau isu baharu.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 7 - Ringkasan eksekutif</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-7">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-7" tabindex="0">Sediakan PETIKAN ringkasan eksekutif maksimum 150 patah perkataan daripada analisis V6 yang disemak: entiti, dokumen/tajuk/ID, kategori dominan jika dapat ditentukan, isu berulang, N_sah, N_belum, status risiko dan fokus pengurusan. Jika N_belum &gt; 0, kekalkan status SEPARA — BELUM LENGKAP dan jangan nyatakan tahap keseluruhan muktamad. Bezakan markah rasmi daripada penilaian risiko.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 8 - Semakan bukti dokumen</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-8">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-8" tabindex="0">Semak SEMUA ID: fakta, nama fail, halaman/seksyen sebenar, justifikasi kategori, L dan I serta maklumat tambahan diperlukan. Semak beza K1/K2, K1/K4 dan K5/K6; gunakan bahasa berhati-hati bagi K7. Jangan reka halaman, amaun, tarikh, status atau punca. Kekalkan komponen L atau I yang mempunyai bukti walaupun komponen lain tiada.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 9 - Perbandingan tajuk audit</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-9">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-9" tabindex="0">Bandingkan semua tajuk pengauditan bagi entiti sama dalam sesi ini: objektif, skop, markah rasmi jika dinyatakan, bilangan ID, isu utama, isu berulang dan fokus pengurusan. Nyatakan batasan bukti. Jangan campurkan universiti atau dokumen lain, mencipta skor tajuk, atau menyamakan penilaian risiko dengan markah rasmi.
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-top">
+                <span>Bonus 10 - Hasil siap dimasukkan ke slaid</span>
+                <button class="btn" type="button" data-copy-target="bonus-prompt-10">Salin Contoh</button>
+              </div>
+              <pre id="bonus-prompt-10" tabindex="0">Gunakan dalam sembang Gemini baharu selepas juruaudit menyemak analisis V6 yang saya lampirkan. Tugas ini ialah penyusunan bahan pembentangan berdasarkan analisis tersebut.
+
+Tukarkan analisis yang disemak kepada isi slaid: Tajuk Analisis, Ringkasan Eksekutif, Penemuan Utama, Isu Berulang, Tujuh Kategori dan Tahap Risiko, Cadangan Fokus Pengurusan serta Rumusan Penutup. Bilangan slaid mengikut kandungan dan kebolehbacaan.
+
+Kekalkan Kod Tajuk Bahagian 2A dan ID PU-[KOD TAJUK]-[NN] yang sedia ada. Label ringkasan terpilih sebagai PETIKAN; daftar penuh Bahagian 3 dan Bahagian 5 serta rujukan bukti kekal sebagai bahan semakan. Jangan reka fakta, skor, status, tindakan atau markah rasmi.
+
+Gunakan K1 Tadbir Urus; K2 Tiada Mandat; K3 Kesilapan / Isu Teknikal; K4 Kecuaian; K5 Pembaziran; K6 Pemborosan; K7 Penyelewengan / Ketirisan. R = L × I; Rendah 1–4, Sederhana 5–8, Tinggi 9–12, Kritikal 13–16.
+
+Paparkan N, N_sah dan N_belum seperti analisis yang disahkan. Jika N_belum &gt; 0, kekalkan STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP; statistik risiko subset menggunakan N_sah dan label SEPARA. Jangan mereka tahap keseluruhan. Jika N_sah = 0, jangan kira peratus atau purata subset. Kekalkan komponen L atau I yang disokong bukti dan nyatakan maklumat tambahan diperlukan.
+
+Cadangan pengurusan mengikut isu serta bukti, merujuk ID yang sama; tiada bilangan tindakan tetap. Gunakan bahasa berhati-hati untuk K7. Jika analisis bercanggah atau tiada, minta pembetulan atau analisis yang disemak sebelum menyusun slaid.</pre>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="slide" data-slide="8" aria-labelledby="slide-8-title">
-        <div class="content-card panel pad ">
-<p class="eyeline">Langkah 6 / 8 • Semakan juruaudit</p><h2 class="slide-title small one-line-title" id="slide-8-title">Sahkan bukti, kategori dan pengiraan</h2><p class="subtitle">Draf AI perlu disemak terhadap dokumen asal. Kategori ialah jenis isu; tahap risiko ialah penilaian L × I.</p><ul class="list" id="auditor-checklist"><li><span><strong>B3 = B5.</strong> Semak Kod Tajuk Bahagian 2A, format ID PU-[KOD TAJUK]-[NN] dan rujukan; termasuk penemuan Rendah, tidak berulang, belum dikelaskan atau belum berskor.</span></li><li><span><strong>L dan I berasas bukti.</strong> Kekalkan nilai komponen yang tersedia. Jangan isi sifar, nilai lalai atau anggaran untuk melengkapkan jadual.</span></li><li><span><strong>N_sah + N_belum = N.</strong> Statistik subset dilabel SEPARA dan menggunakan N_sah. Tiada tahap keseluruhan muktamad jika penilaian belum lengkap.</span></li><li><span><strong>Fokus pengurusan mengikut bukti.</strong> Semua cadangan menggunakan ID B3/B5. Bezakan fakta, implikasi, cadangan dan status tindakan sebenar.</span></li></ul><details class="guidance" id="risk-guide"><summary>Rujukan pantas • Risiko 4×4 dan data belum lengkap</summary><div class="guidance-body" id="risk-rules"><p><strong>R = L × I.</strong> L dan I integer 1–4. L: Jarang, Mungkin, Berkemungkinan, Kerap. I: Kecil, Sederhana, Besar, Bencana.</p>
+        <div class="content-card panel pad">
+          <p class="eyeline">Langkah 6 / 8 - Semakan Juruaudit</p>
+          <h2 class="slide-title small one-line-title" id="slide-8-title">Juruaudit menyemak semula hasil analisis</h2>
+          <p class="lead">Hasil Custom Gemini ialah draf bantuan. Juruaudit tetap perlu membuat semakan dengan dokumen sumber yang dirujuk dalam hasil Gemini.</p>
+          <ul class="list" id="auditor-checklist">
+            <li>Bandingkan setiap ID Penemuan dengan dokumen asal dan semak halaman, seksyen atau perenggan sokongan.</li>
+            <li>Pastikan Kod Tajuk dalam ID sama dengan Bahagian 2A; set ID Bahagian 3 = Bahagian 5, termasuk isu Rendah dan belum lengkap.</li>
+            <li>Sahkan kategori K1–K7 dan bukti L/I. R = L × I: Rendah 1–4, Sederhana 5–8, Tinggi 9–12, Kritikal 13–16.</li>
+            <li>Semak N_sah + N_belum = N. Jika belum lengkap, kekalkan L/I yang tersedia dan status SEPARA — BELUM LENGKAP.</li>
+            <li>Pastikan cadangan pengurusan merujuk ID yang sama dan tidak melebihi bukti; kemaskan bahasa audit sebelum dibentangkan.</li>
+          </ul>
+          <div class="callout">Bahan yang dibentangkan hendaklah merupakan hasil yang telah disemak juruaudit, bukan sekadar hasil AI.</div>
+          <details class="guidance" id="risk-guide"><summary>Rujukan pantas • Risiko 4×4 dan data belum lengkap</summary><div class="guidance-body" id="risk-rules"><p><strong>R = L × I.</strong> L dan I integer 1–4. L: Jarang, Mungkin, Berkemungkinan, Kerap. I: Kecil, Sederhana, Besar, Bencana.</p>
 <p><strong>Rendah 1–4; Sederhana 5–8; Tinggi 9–12; Kritikal 13–16.</strong> Skor 4 ialah Rendah. Skor hanya dikira apabila kedua-dua komponen mempunyai asas bukti.</p>
 <p><strong>Komponen separa dikekalkan.</strong> Jika hanya L berasas, kekalkan L dan tandakan I, R serta tahap “Belum dapat ditentukan”. Gunakan prinsip yang sama jika hanya I berasas.</p>
 <p><strong>N = semua ID B3 = semua penemuan B5.</strong> N_sah ialah ID dengan L dan I lengkap; N_belum ialah ID belum lengkap. N_sah + N_belum = N.</p>
@@ -2523,45 +2598,191 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
       </section>
 
       <section class="slide" data-slide="9" aria-labelledby="slide-9-title">
-        <div class="content-card panel pad ">
-<p class="eyeline">Langkah 7 / 8 • Fokus pengurusan</p><h2 class="slide-title small one-line-title" id="slide-9-title">Daripada penemuan kepada tindakan</h2><p class="subtitle">Bahagian 6 mengekalkan Kod Tajuk Bahagian 2A dan ID yang sama daripada Bahagian 3 dan Bahagian 5. Cadangan perlu khusus, praktikal dan disokong bukti.</p><ul class="list"><li><span><strong>Utamakan isu Kritikal dan Tinggi yang sah.</strong> Sertakan isu berulang signifikan dan isu yang memberi impak besar kepada organisasi.</span></li><li><span><strong>Isu signifikan belum lengkap tetap diberi perhatian.</strong> Nyatakan maklumat tambahan diperlukan tanpa melabelnya Tinggi atau Kritikal.</span></li><li><span><strong>Nyatakan tindakan yang jelas.</strong> Hubungkan ID, isu, tahap/status, sebab keutamaan dan cadangan tindakan pengurusan.</span></li><li><span><strong>Kekalkan status tindakan sebenar.</strong> Gunakan tarikh dan bukti dalam dokumen; jangan menganggap tindakan telah selesai.</span></li></ul><div class="actions"><a class="btn primary" id="outline-download" href="downloads/Templat_Fokus_Pengurusan_V6.md" download>Muat turun templat fokus pengurusan (.md)</a></div><details class="guidance"><summary>Prompt • Cadangan fokus pengurusan</summary><div class="prompt-box"><div class="prompt-top"><span>Bahagian 6 V6</span><button class="btn gold" data-copy-target="management-prompt" type="button">Salin Prompt</button></div><pre id="management-prompt" tabindex="0" aria-label="Prompt fokus pengurusan V6">Sediakan petikan Bahagian 6 V6 dengan jadual Keutamaan, ID Penemuan, Isu Yang Perlu Difokuskan, Tahap/Status Risiko, Sebab Menjadi Keutamaan dan Cadangan Tindakan Pengurusan. Liputi isu Kritikal, Tinggi, berulang signifikan dan isu penting belum lengkap yang memerlukan maklumat lanjut. Bilangan cadangan mengikut bukti. Semua ID mesti wujud dalam B3/B5; jangan cipta tahap risiko atau isu baharu.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre></div></details>
+        <div class="content-card panel pad template-slide">
+          <p class="eyeline">Langkah 7 / 8 - Templat Slaid Seragam</p>
+          <h2 class="slide-title small one-line-title" id="slide-9-title">Masukkan hasil analisis ke templat slaid</h2>
+          <p class="subtitle">Pindahkan hasil analisis yang telah disemak ke templat slaid supaya semua pembentangan juruaudit kelihatan seragam.</p>
+          <ul class="list">
+            <li>Tajuk Analisis dan Ringkasan Eksekutif menjadi slaid pembuka serta ringkasan utama.</li>
+            <li>Bahagian 3 membekalkan penemuan utama; Bahagian 4 membekalkan isu berulang. Kekalkan Kod Tajuk dan ID penemuan.</li>
+            <li>Bahagian 5 membekalkan tujuh kategori dan risiko 4×4; paparkan N, N_sah, N_belum serta status kelengkapan.</li>
+            <li>Bahagian 6 membekalkan rumusan dan fokus pengurusan berdasarkan ID serta bukti yang sama.</li>
+            <li>Gunakan Bonus 10 dalam sembang Gemini baharu untuk menyusun isi; juruaudit menyemak slaid sebelum digunakan.</li>
+          </ul>
+          <div class="actions" aria-label="Muat turun templat slaid">
+            <a class="btn primary" href="https://docs.google.com/presentation/d/1qAY56GkkvYxQsKS5fhZaSlzfs1uqvOBn/edit?usp=sharing&amp;ouid=105726279532383248637&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="M7 10l5 5 5-5"></path><path d="M12 15V3"></path></svg>
+              Muat Turun Templat
+            </a>
+          </div>
+          <div class="callout">Templat asal ialah rujukan susun atur. Gantikan data contoh dan sesuaikan kategori kepada K1–K7 V6, Kod Tajuk serta julat risiko di slaid 8. Kekalkan status SEPARA — BELUM LENGKAP jika berkenaan.</div>
+          <details class="guidance"><summary>Bahan tambahan V6 • Fokus pengurusan</summary><div class="guidance-body"><p>Gunakan jadual ini sebagai bahan sokongan bagi isi Bahagian 6.</p><a class="btn" href="downloads/Templat_Fokus_Pengurusan_V6.md" download>Muat turun templat fokus pengurusan V6 (.md)</a></div></details>
         </div>
       </section>
 
       <section class="slide" data-slide="10" aria-labelledby="slide-10-title">
-        <div class="content-card panel pad ">
-<p class="eyeline">Langkah 8 / 8 • Kelengkapan risiko</p><h2 class="slide-title small one-line-title" id="slide-10-title">ID lengkap, risiko mungkin belum lengkap</h2><p class="subtitle">Contoh sintetik: empat penemuan kekal dalam daftar, tetapi hanya dua mempunyai L dan I lengkap.</p><ol class="number-list"><li><span><strong>N = 4; N_sah = 2; N_belum = 2.</strong> Semua ID kekal dalam Bahagian 5.</span></li><li><span><strong>Tinggi 50% daripada subset dua ID berskor.</strong> Label statistik SEPARA; penyebutnya N_sah = 2.</span></li><li><span><strong>Status keseluruhan: SEPARA — BELUM LENGKAP.</strong> Kekalkan komponen L/I yang tersedia dan nyatakan bukti tambahan diperlukan.</span></li></ol><details class="guidance" id="risk-example"><summary>Lihat contoh penuh • Empat ID sintetik</summary><div class="prompt-box"><div class="prompt-top"><span>Contoh latihan V6</span><button class="btn gold" type="button" data-copy-target="risk-example-text">Salin Contoh</button></div><pre id="risk-example-text" tabindex="0" aria-label="Contoh risiko separa V6">UJIAN SINTETIK — bukan dapatan audit sebenar.
-Pasangan L/I berikut diberi untuk latihan kaedah sahaja.
-
-Pemetaan Bahagian 2A (rekaan):
-PPK-PTJA = Pengurusan Pentadbiran dan Kewangan — PTj A.
-PKEND = Pengurusan Kenderaan.
-Kod yang sama digunakan dalam Bahagian 2B hingga Bahagian 6.
-
-ID Penemuan       Kategori/status             L   I   R    Tahap
-PU-PPK-PTJA-01     K1 — Tadbir Urus             3   3   9    Tinggi
-PU-PPK-PTJA-02     K3 — Isu Teknikal            2   2   4    Rendah
-PU-PKEND-01        K4 — Kecuaian                4   —   —    Belum dapat ditentukan
-PU-PKEND-02        Belum dapat dikelaskan       —   3   —    Belum dapat ditentukan
-
-Semua empat ID kekal dalam B3 dan B5.
-N = 4; N_sah = 2; N_belum = 2; 2 + 2 = 4.
-K1=1; K2=0; K3=1; K4=1; K5=0; K6=0; K7=0; belum dikelaskan=1.
-Jumlah kategori + belum dikelaskan = 4.
-
-Statistik risiko SEPARA (subset N_sah=2):
-Tinggi = 1/2 × 100 = 50%; Rendah = 1/2 × 100 = 50%.
-Angka ini tidak mewakili keseluruhan empat penemuan.
-
-Kekalkan L=4 bagi PU-PKEND-01 dan I=3 bagi PU-PKEND-02.
-Minta bukti impak PU-PKEND-01 serta kemungkinan dan kategori PU-PKEND-02.
-Jangan isi komponen yang hilang atau mereka tahap.
-
-STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP
-Tiada Tahap Risiko Keseluruhan muktamad.
-PU-PPK-PTJA-01 memerlukan fokus tindakan berdasarkan risiko Tinggi yang sah.
-PU-PKEND-01 dan PU-PKEND-02 memerlukan maklumat tambahan sebelum risiko dapat dilengkapkan.</pre></div></details><div class="callout">Kesepadanan ID dan kelengkapan risiko ialah dua semakan berbeza. Jangan menggugurkan penemuan untuk menjadikan penilaian kelihatan lengkap.</div>
+        <div class="content-card panel pad">
+          <p class="eyeline">Langkah 8 / 8 - Rumusan Visual</p>
+          <h2 class="slide-title small one-line-title" id="slide-10-title">Buat rumusan visual menggunakan Gemini Image</h2>
+          <p class="lead">Gunakan prompt berformat JSON ini bersama analisis yang telah disemak dalam sembang Gemini baharu dengan penjanaan imej. Langkah ini dilakukan selepas analisis Gem V6 selesai.</p>
+          <ol class="number-list">
+            <li>Sediakan analisis V6 yang disemak, termasuk Kod Tajuk, ID, tujuh kategori, N, N_sah, N_belum dan fokus pengurusan.</li>
+            <li>Salin prompt JSON di bawah. Buka sembang Gemini baharu dan pilih penjanaan imej yang tersedia pada akaun.</li>
+            <li>Tampal prompt JSON bersama analisis yang disemak, kemudian minta satu imej rumusan 16:9.</li>
+            <li>Semak semula teks, angka, ID dan status risiko dalam imej sebelum memasukkannya ke slaid.</li>
+          </ol>
+          <div class="prompt-box">
+            <div class="prompt-top">
+              <span>Prompt JSON V6 untuk Gemini Image</span>
+              <button class="btn" type="button" data-copy-target="image-prompt">Salin Prompt JSON</button>
+            </div>
+            <pre id="image-prompt" tabindex="0">```json
+{
+  "arahan_paling_utama": "Jana satu imej infografik papan pemuka berdasarkan analisis V6 yang telah disemak juruaudit dan dilampirkan bersama prompt ini. Gunakan sembang Gemini baharu dengan penjanaan imej. Jika analisis tiada atau bercanggah, minta analisis yang dibetulkan dahulu. Selepas input mencukupi, hasilkan imej, bukan JSON balasan.",
+  "jenis_hasil": "imej_papan_pemuka_rumusan_prestasi_dan_risiko_audit",
+  "versi_templat": "V6_Kod_Tajuk_7_Kategori",
+  "bahasa": {
+    "locale": "ms-MY",
+    "arahan": "Semua tajuk, label, angka dan rumusan menggunakan Bahasa Melayu Malaysia yang profesional, tepat dan mudah dibaca."
+  },
+  "sumber_data_wajib": {
+    "input_utama": "Analisis penuh V6 yang telah disemak juruaudit, dilampirkan atau ditampal bersama prompt ini.",
+    "arahan": [
+      "Gunakan hanya fakta, angka, kategori, risiko, markah rasmi dan cadangan yang telah disahkan dalam analisis.",
+      "Jangan mencipta institusi, tajuk, penemuan, amaun, markah, skor, tahap, punca, tarikh, status tindakan atau bukti.",
+      "Jika markah rasmi tiada, paparkan Tiada Markah Rasmi. Bezakan markah prestasi rasmi daripada skor risiko L × I.",
+      "Kekalkan batasan dokumen, label DRAF SEBAHAGIAN dan status penilaian belum lengkap jika dinyatakan.",
+      "Jika analisis mengandungi percanggahan ID, jumlah, kategori atau pengiraan, minta semakan juruaudit; jangan membetulkan fakta dengan andaian."
+    ]
+  },
+  "media_hasil": {
+    "jenis": "satu imej",
+    "nisbah": "16:9",
+    "orientasi": "melintang",
+    "kualiti": "resolusi tinggi; teks tajam dan mudah dibaca"
+  },
+  "tajuk_imej": {
+    "tajuk_utama": "RUMUSAN",
+    "subtajuk": "PRESTASI &amp; RISIKO AUDIT",
+    "nama_entiti": "Ambil daripada analisis yang disemak",
+    "tempoh": "Ambil daripada analisis; jika tiada, nyatakan Tidak dinyatakan"
+  },
+  "reka_bentuk_rujukan": {
+    "susun_atur": "Tajuk di atas; kad tajuk pengauditan dinamik; taburan tujuh kategori di bawah kiri; panel status risiko di bawah tengah; ringkasan eksekutif dan fokus pengurusan di bawah kanan.",
+    "latar": "putih bersih dengan tona lembut",
+    "warna_utama": "biru tua korporat",
+    "kad": "putih, sudut membulat, garisan nipis dan bayang lembut",
+    "ikon": "ikon vektor kemas",
+    "tipografi": "tajuk besar, angka jelas, isi ringkas; jangan mengecilkan teks sehingga sukar dibaca"
+  },
+  "kod_tajuk_dan_id": {
+    "sumber_kod": "Kod Tajuk yang telah ditetapkan dalam Bahagian 2A",
+    "format_id": "PU-[KOD TAJUK]-[NN]",
+    "arahan": "Kekalkan Kod Tajuk dan ID asal. Kod dalam ID mesti sama tepat dengan Bahagian 2A dan konsisten dalam Bahagian 2B hingga 6. Jangan cipta kod atau ID baharu. Kod Tajuk berbeza daripada kategori K1–K7."
+  },
+  "kad_dinamik": {
+    "bilangan": "Mengikut tajuk sebenar dalam analisis; tiada bilangan kad tetap.",
+    "kandungan": [
+      "Kod Tajuk dan nama tajuk",
+      "Bilangan penemuan",
+      "Markah rasmi jika dinyatakan",
+      "Risiko atau status yang disahkan",
+      "ID penemuan utama yang diringkaskan"
+    ],
+    "jika_ruang_terhad": "Label kad terpilih sebagai PETIKAN dan nyatakan bilangan tajuk yang dipaparkan daripada jumlah sebenar. Kekalkan jumlah keseluruhan daripada daftar penuh; jangan gugurkan ID daripada analisis atau mengubah N."
+  },
+  "taburan_kategori_isu": {
+    "kategori_wajib": [
+      {
+        "kod": "K1",
+        "nama": "Tadbir Urus"
+      },
+      {
+        "kod": "K2",
+        "nama": "Tiada Mandat"
+      },
+      {
+        "kod": "K3",
+        "nama": "Kesilapan / Isu Teknikal"
+      },
+      {
+        "kod": "K4",
+        "nama": "Kecuaian"
+      },
+      {
+        "kod": "K5",
+        "nama": "Pembaziran"
+      },
+      {
+        "kod": "K6",
+        "nama": "Pemborosan"
+      },
+      {
+        "kod": "K7",
+        "nama": "Penyelewengan / Ketirisan"
+      }
+    ],
+    "arahan": "Paparkan semua tujuh kategori termasuk bilangan sifar yang disahkan. Belum dapat dikelaskan — bukti tidak mencukupi ialah status berasingan, bukan K8. Jangan menukar maklumat tidak diketahui menjadi sifar.",
+    "semakan_jumlah": "Jumlah K1–K7 + Belum dapat dikelaskan = N. Kategori ialah jenis isu, bukan susunan tahap risiko."
+  },
+  "peraturan_risiko_4x4": {
+    "formula": "R = L × I",
+    "komponen": "L dan I ialah integer 1–4 berasaskan bukti.",
+    "julat": {
+      "Rendah": [
+        1,
+        4
+      ],
+      "Sederhana": [
+        5,
+        8
+      ],
+      "Tinggi": [
+        9,
+        12
+      ],
+      "Kritikal": [
+        13,
+        16
+      ]
+    },
+    "warna": {
+      "Rendah": "hijau",
+      "Sederhana": "kuning",
+      "Tinggi": "jingga",
+      "Kritikal": "merah",
+      "Belum lengkap": "kelabu dengan label jelas"
+    },
+    "komponen_separa": "Kekalkan L atau I yang disokong bukti. Jika satu komponen tiada, R dan tahap belum dapat ditentukan. Jangan isi sifar, nilai lalai atau anggaran. Skor 4 ialah Rendah."
+  },
+  "kelengkapan_penilaian": {
+    "N": "Semua ID Bahagian 3 = semua penemuan Bahagian 5, termasuk Rendah, tidak berulang, belum dikelaskan dan belum berskor.",
+    "N_sah": "ID dengan kedua-dua L dan I lengkap serta berasaskan bukti.",
+    "N_belum": "ID yang penilaian risikonya belum lengkap.",
+    "semakan": "N_sah + N_belum = N",
+    "paparan": "Paparkan N, N_sah dan N_belum dengan label yang jelas.",
+    "statistik_separa": "Jika N_belum &gt; 0, statistik risiko subset menggunakan penyebut N_sah dan label SEPARA. Jangan menyamakan subset dengan semua penemuan. Jika N_sah = 0, jangan kira peratus atau purata subset."
+  },
+  "risiko_keseluruhan": {
+    "jika_belum_lengkap": "Jika N_belum &gt; 0, paparkan STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP. Gunakan panel status, tanpa tolok atau label tahap keseluruhan muktamad.",
+    "jika_lengkap": "Jika N_belum = 0 dan N &gt; 0, gunakan tahap keseluruhan serta justifikasi yang telah disahkan dalam Bahagian 6 berdasarkan isu Tinggi/Kritikal, risiko tertinggi, pengulangan, impak dan keberkesanan kawalan. Jangan kira tahap baharu dengan purata atau ambang peratus automatik.",
+    "jika_tiada_penemuan": "Jika N = 0, nyatakan tiada penemuan dalam skop analisis; jangan menetapkan Rendah secara automatik."
+  },
+  "rumusan_eksekutif_dan_fokus": {
+    "sumber": "Ringkasan Bahagian 2 dan Bahagian 6 yang telah disemak.",
+    "arahan": "Ringkaskan isu utama dan tindakan tanpa menukar maksud, status atau bukti. Bilangan tindakan mengikut isu dan ruang; label PETIKAN jika terpilih. Setiap tindakan merujuk ID Bahagian 3/5 yang sama.",
+    "isu_belum_lengkap": "Kekalkan isu signifikan belum lengkap sebagai Risiko belum lengkap — maklumat tambahan diperlukan. Jangan melabelnya Tinggi atau Kritikal.",
+    "K7": "Gunakan bahasa berhati-hati bagi Penyelewengan / Ketirisan; jangan membuat tuduhan muktamad tanpa bukti jelas."
+  },
+  "semakan_hasil": [
+    "Tiada tajuk atau nombor contoh rekaan, teks placeholder, ejaan rosak atau label editor dalam imej.",
+    "Kekalkan Kod Tajuk, ID, unit angka, status separa, penyebut statistik dan batasan yang diperlukan untuk memahami visual.",
+    "Rujukan dokumen dan bukti penuh kekal dalam analisis asal serta bahan sokongan pembentangan. Visual ialah ringkasan, tidak menggantikan daftar penuh.",
+    "Juruaudit menyemak semua teks, angka dan padanan dengan analisis sebelum imej digunakan."
+  ]
+}
+```</pre>
+          </div>
         </div>
       </section>
 
@@ -2569,19 +2790,19 @@ PU-PKEND-01 dan PU-PKEND-02 memerlukan maklumat tambahan sebelum risiko dapat di
         <div class="two-col">
           <div>
             <p class="eyeline">Senarai Semak Akhir</p>
-            <h2 class="slide-title small one-line-title" id="slide-11-title">Ulang aliran kerja secara kendiri</h2>
-            <p class="subtitle">Bahan latihan V2 • Gem V6 • Kod Tajuk. Contoh awam adalah sintetik; hasil kerja sebenar memerlukan kebenaran organisasi dan semakan juruaudit.</p>
+            <h2 class="slide-title small one-line-title" id="slide-11-title">Pastikan peserta boleh melaksanakannya sendiri</h2>
+            <p class="subtitle">Sebelum sesi tamat, pastikan peserta bukan sekadar melihat demonstrasi, tetapi boleh mengulang keseluruhan aliran kerja secara kendiri.</p>
             <ul class="list">
-              <li><span>Buka Gem V6 yang sudah siap, muat naik laporan yang dibenarkan dan hantar prompt analisis; akses bergantung pada akaun serta kebenaran.</span></li>
-              <li><span>Semak sumber, skop dan OCR; beberapa tajuk entiti sama dibenarkan, universiti berbeza diasingkan.</span></li>
-              <li><span>Semak Kod Tajuk bermakna dan ID PU-[KOD TAJUK]-[NN]; kod konsisten B2–B6 dan set ID B3=B5.</span></li>
-              <li><span>Sahkan kategori V6, bukti K7, risiko 4×4 serta N_sah + N_belum = N; kekalkan L/I yang berasas.</span></li>
-              <li><span>Jika risiko belum lengkap, gunakan status SEPARA — BELUM LENGKAP. Cadangkan tindakan pengurusan mengikut ID dan bukti.</span></li>
-            </ul>
+            <li>Buka Custom Gemini V6 yang disediakan; gunakan model penaakulan / Pro jika tersedia.</li>
+            <li>Muat naik dokumen entiti yang sama, salin prompt standard V6 dan semak enam bahagian analisis.</li>
+            <li>Sahkan Kod Tajuk, padanan ID Bahagian 3/5, tujuh kategori dan rujukan bukti.</li>
+            <li>Semak risiko 4×4, N_sah + N_belum = N dan cadangan pengurusan; kekalkan status SEPARA jika belum lengkap.</li>
+            <li>Pindahkan analisis yang disemak ke templat slaid dan jana rumusan visual dalam sembang Gemini baharu.</li>
+          </ul>
             <div class="actions">
               <a class="btn primary" href="https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing" target="_blank" rel="noopener">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M8 7h9v9"></path></svg>
-                Buka Gem V6
+                Buka Gemini V6
               </a>
               <button class="btn gold" type="button" data-copy-target="prompt-full">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>

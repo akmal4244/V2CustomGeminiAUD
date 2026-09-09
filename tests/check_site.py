@@ -60,12 +60,11 @@ assert "13soyVBmExhzZiL88kbKawhKt1rzceJrF" not in html, "Legacy Gem URL"
 assert "/gems/edit/" not in html, "Owner editor URL must not be advertised"
 assert "/gems/view" not in html and "gemini.google.com/u/" not in html, "Use participant share link"
 assert "10xOZ5ybA6Eqc0A9xzykmgTHPl_rq9sBK" not in html, "Obsolete shared V4.4.1 Gem"
-assert p.urls.count(GEM_URL) == 4, "All four Gem buttons must use the official share URL"
+assert p.urls.count(GEM_URL) == 3, "All three reference-layout Gem links must use the official V6 share URL"
 assert re.search(r'<pre\b[^>]*id="gem-link"[^>]*>' + re.escape(GEM_URL) + r'</pre>', html), "Copied Gem URL differs"
 slide_one = re.search(r'<section\b[^>]*data-slide="1".*?</section>', html, re.S).group()
-assert re.search(r'<a class="btn primary" id="start-analysis" href="' + re.escape(GEM_URL) + r'"[^>]*>Mulakan Analisis dengan Gem V6</a>', slide_one), "Slide 1 needs a visible primary start CTA"
-assert 'id="gem-usage"' in html and 'id="gem-setup"' not in html
-assert "Buka dan gunakan Gem V6" in text
+assert 'class="hero-grid"' in slide_one and 'class="gemini-badge gemini-link"' in slide_one
+assert "Buka Custom Gemini V6" in text
 assert not re.search(r'<details\b[^>]*id="gem-downloads"[^>]*\bopen\b', html), "Optional downloads must start collapsed"
 for obsolete in ("Bina Gem sendiri", "bina Gem,", "Gem baharu / New Gem", "Buka pengurus Gems"):
     assert obsolete not in text, f"Obsolete participant setup step: {obsolete}"
@@ -115,6 +114,30 @@ assert "STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP" in text
 for obsolete in (r"[vV]4\.4\.1", r"\b[Hh]ibrid\b", r"[Mm]aksimum tiga", r"Bahagian 7", r"K1\s*[—–-]\s*Tiada Mandat", r"K2\s*[—–-]\s*Tadbir Urus"):
     assert not re.search(obsolete, text), f"Outdated V4 rule: {obsolete}"
 
+# Preserve the original training journey while the methodology follows V6.
+sections = {int(n): body for n, body in re.findall(r'<section\b[^>]*data-slide="(\d+)"[^>]*>(.*?)</section>', html, re.S)}
+assert 'class="two-col"' in sections[3], "Reference access slide has two columns"
+assert "Custom Gemini langkah demi langkah" in sections[2]
+assert "Tanya Custom Gemini untuk memecahkan maklumat" in sections[7]
+assert sections[7].count('class="prompt-box"') == 10 and '<details' not in sections[7], "Keep all ten bonus examples visible"
+template_url = "https://docs.google.com/presentation/d/1qAY56GkkvYxQsKS5fhZaSlzfs1uqvOBn/edit?usp=sharing&ouid=105726279532383248637&rtpof=true&sd=true"
+assert template_url in p.urls and "Templat asal ialah rujukan susun atur" in sections[9]
+assert "K1–K7 V6, Kod Tajuk" in sections[9]
+assert "Buat rumusan visual menggunakan Gemini Image" in sections[10]
+assert "sembang Gemini baharu" in sections[7] and "sembang Gemini baharu" in sections[10]
+assert "sedia dimasukkan ke templat slaid" in sections[1]
+assert "templat slaid" in sections[11] and "rumusan visual" in sections[11]
+
+image_prompt = unescape(re.search(r'<pre id="image-prompt"[^>]*>(.*?)</pre>', html, re.S).group(1))
+visual = json.loads(image_prompt.removeprefix('```json\n').removesuffix('\n```'))
+assert visual['versi_templat'] == 'V6_Kod_Tajuk_7_Kategori'
+assert visual['taburan_kategori_isu']['kategori_wajib'] == [{'kod': f'K{i}', 'nama': c} for i, c in enumerate(CATEGORIES, 1)]
+assert visual['peraturan_risiko_4x4']['julat'] == {'Rendah': [1, 4], 'Sederhana': [5, 8], 'Tinggi': [9, 12], 'Kritikal': [13, 16]}
+assert visual['kod_tajuk_dan_id']['format_id'] == 'PU-[KOD TAJUK]-[NN]'
+assert 'N_sah = 0' in visual['kelengkapan_penilaian']['statistik_separa']
+assert 'SEPARA — BELUM LENGKAP' in visual['risiko_keseluruhan']['jika_belum_lengkap']
+assert 'tanpa tolok' in visual['risiko_keseluruhan']['jika_belum_lengkap']
+
 workflow = (ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8")
 assert "path: _site" in workflow and "include-hidden-files: true" not in workflow
 for name in DOWNLOADS:
@@ -123,6 +146,7 @@ assert "manifest-v6.json" in workflow
 
 print(f"PASS: 11 slides; {len(p.ids)} unique IDs; {len(p.copy_targets)} clipboard controls")
 print("PASS: V6 category order, six report sections, risk bands and seven downloads")
-print("PASS: ready Gem CTA, official share URL and optional reference downloads")
+print("PASS: original 11-slide journey, template link, visible bonus prompts and valid V6 image JSON")
+print("PASS: official Gem share URL and optional reference downloads")
 print("PASS: original source hashes, exact V6 clipboard prompt and allowlisted Pages artifact")
 print("PASS: latest Kod Tajuk source revision and meaningful finding IDs")
