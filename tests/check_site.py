@@ -136,15 +136,16 @@ image_prompt = unescape(re.search(r'<pre id="image-prompt"[^>]*>(.*?)</pre>', ht
 raw_image_json = image_prompt.removeprefix('```json\n').removesuffix('\n```')
 visual = json.loads(raw_image_json)
 # Exact user-supplied image prompt, with line endings normalized to LF.
-assert hashlib.sha256(raw_image_json.encode('utf-8')).hexdigest() == '82451f61c5278c187f36095d2dc543785e04ae9c47f8c728c038a9fa56202681'
-assert visual['versi_templat'] == '6.0_dinamik_7kategori_risiko4x4_kodtajuk'
-assert visual['taburan_kategori_isu_v6']['kategori_standard'] == [f'K{i} {c.upper()}' for i, c in enumerate(CATEGORIES, 1)]
-assert visual['peraturan_risiko_4x4_v6']['pemetaan_tahap_risiko'] == {'RENDAH': '1 hingga 4', 'SEDERHANA': '5 hingga 8', 'TINGGI': '9 hingga 12', 'KRITIKAL': '13 hingga 16'}
-assert visual['logik_kelengkapan_risiko_v6']['formula'] == 'N_sah + N_belum = N'
-assert visual['panel_risiko_keseluruhan_dinamik']['jika_penilaian_separa']['visual'] == 'kad_status_bukan_tolok'
-assert visual['panel_risiko_keseluruhan_dinamik']['jika_penilaian_separa']['status'] == 'SEPARA — BELUM LENGKAP'
-assert visual['tajuk_imej']['subtajuk_dinamik']['jika_tiada_markah_rasmi_langsung'] == 'PENEMUAN & RISIKO AUDIT'
-assert "Jika markah atau penarafan rasmi tidak wujud, buang terus medan Prestasi daripada kad." in visual['kad_dinamik_tajuk_audit']['logik_paparan_prestasi']
+assert hashlib.sha256(raw_image_json.encode('utf-8')).hexdigest() == 'd3d8977abe49861822118fd22201120bae35c0f51e19394e6f433cee9b4ea536'
+assert visual['versi_templat'] == '6.1_rumusan_audit_7kategori_kodtajuk_dinamik'
+assert visual['taburan_7_kategori']['susunan'] == [{'kod': f'K{i}', 'kategori': c.upper()} for i, c in enumerate(CATEGORIES, 1)]
+assert visual['risiko_4x4_v6']['tahap'] == {'RENDAH': '1–4', 'SEDERHANA': '5–8', 'TINGGI': '9–12', 'KRITIKAL': '13–16'}
+partial = visual['ringkasan_risiko_keseluruhan']['jika_n_belum_lebih_0']
+assert partial['jangan_guna_tolok'] is True
+assert partial['status'] == 'SEPARA — BELUM LENGKAP'
+assert [item['nilai'] for item in partial['statistik']] == ['{{N}}', '{{N_sah}}', '{{N_belum}}']
+assert visual['header']['subtajuk_dinamik']['jika_semua_tajuk_tiada_markah_rasmi'] == 'PENEMUAN & RISIKO AUDIT'
+assert 'Jika TIADA markah dan TIADA penarafan rasmi, BUANG TERUS komponen prestasi daripada kad.' in visual['kad_tajuk_pengauditan']['peraturan_prestasi']
 
 workflow = (ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8")
 assert "path: _site" in workflow and "include-hidden-files: true" not in workflow
