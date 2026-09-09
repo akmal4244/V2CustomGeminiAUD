@@ -8,7 +8,7 @@ import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-GEM_URL = "https://gemini.google.com/gem/f90a8edf1a04?usp=sharing"
+GEM_URL = "https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing"
 CATEGORIES = [
     "Tadbir Urus", "Tiada Mandat", "Kesilapan / Isu Teknikal", "Kecuaian",
     "Pembaziran", "Pemborosan", "Penyelewengan / Ketirisan",

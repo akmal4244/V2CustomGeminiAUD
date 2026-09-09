@@ -8,7 +8,7 @@ Laluan GitHub Pages peka huruf besar/kecil: gunakan `V2CustomGeminiAUD` dengan V
 
 ## Mulakan analisis
 
-1. Buka [Gem analisis audit](https://gemini.google.com/gem/f90a8edf1a04?usp=sharing) melalui butang utama.
+1. Buka [Gem analisis audit](https://gemini.google.com/gem/1V-Tcts6MVW--dL2D6SRqQ4YIxiX-flui?usp=sharing) melalui butang utama.
 2. Muat naik dokumen audit sesi semasa yang dibenarkan organisasi.
 3. Salin Prompt Penuh V6 pada slaid 5. Teksnya sama dengan fail prompt sumber.
 4. Semak enam bahagian, ID, kategori, bukti dan kelengkapan risiko terhadap sumber asal.
