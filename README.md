@@ -36,6 +36,18 @@ Gem audit menjalankan analisis V6. Bonus 10 dan slaid 10 ialah penyusunan bahan 
 
 Prompt gambar pada slaid 10 menggunakan JSON baharu yang dibekalkan pengguna, versi `6.1_rumusan_audit_7kategori_kodtajuk_dinamik` untuk Gem V6. Butang **Salin Prompt JSON** menyalin keseluruhan prompt. Susun atur merangkumi header institusi, kad Tajuk Pengauditan, tujuh lajur kategori, ringkasan risiko, rumusan eksekutif dan footer. Markah, penarafan atau status rasmi dipaparkan hanya apabila wujud dalam sumber; tiada label gantian untuk tajuk tanpa prestasi rasmi. Penilaian belum lengkap menggunakan kad status SEPARA dengan N, N_sah dan N_belum tanpa tolok risiko keseluruhan muktamad.
 
+## Kemas kini V6.1 (logik keputusan eksplisit)
+
+Gem “Analisis Penuh - V6.1 - 7 Kategori” menambah dua belas peraturan logik (fail `downloads/Tambahan_Logik_V6.1.txt`):
+
+- urutan ujian kategori K7 → K2 → K5 → K6 → K4 → K3 → K1 (berhenti pada padanan pertama);
+- rubrik bertulis bagi Kemungkinan (L) dan Impak (I);
+- peraturan Tahap Risiko Keseluruhan: KRITIKAL jika ada Kritikal; TINGGI jika Tinggi ≥ 33.3%; SEDERHANA jika Tinggi 10%–33.3% atau ada isu kronik; RENDAH jika selainnya;
+- Bahagian 4A trend tahun ke tahun dan isu kronik, 5B-1 semakan K5/K6/K7, 6B ujian konsistensi penarafan;
+- semakan aritmetik sumber, liputan folder dan Bahasa Melayu Malaysia baku tanpa istilah Indonesia.
+
+Prompt gambar slaid 10 dinaik taraf ke versi `6.2_rumusan_audit_7kategori_kodtajuk_dinamik_bacaan_pengurusan` dengan saiz fon minimum untuk bacaan pengurusan, kad isu kronik, nota K7 dan semakan ejaan BM.
+
 ## Kaedah V6 Kod Tajuk
 
 Bahagian 2A menetapkan Kod Tajuk bermakna, unik dan berasaskan tema audit sebenar serta singkatan Entiti/PTj jika perlu. Kekalkan kod dalam Bahagian 2B hingga Bahagian 6. ID Penemuan menggunakan `PU-[KOD TAJUK]-[NN]`, dengan nombor turutan dua digit; kod dalam ID mesti sepadan tepat dengan Bahagian 2A. Contoh kaedah: `PKEND` → `PU-PKEND-01`. Kod Tajuk berbeza daripada kategori K1–K7.

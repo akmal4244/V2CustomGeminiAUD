@@ -135,9 +135,12 @@ assert "templat slaid" in sections[11] and "rumusan visual" in sections[11]
 image_prompt = unescape(re.search(r'<pre id="image-prompt"[^>]*>(.*?)</pre>', html, re.S).group(1))
 raw_image_json = image_prompt.removeprefix('```json\n').removesuffix('\n```')
 visual = json.loads(raw_image_json)
-# Exact user-supplied image prompt, with line endings normalized to LF.
-assert hashlib.sha256(raw_image_json.encode('utf-8')).hexdigest() == 'd3d8977abe49861822118fd22201120bae35c0f51e19394e6f433cee9b4ea536'
-assert visual['versi_templat'] == '6.1_rumusan_audit_7kategori_kodtajuk_dinamik'
+# Image prompt 6.2 (V6.1 upgrade of the user-supplied 6.1 prompt), line endings LF.
+assert hashlib.sha256(raw_image_json.encode('utf-8')).hexdigest() == '97a97ee2b61d84ea413f4f3477ede543774aa475c640cadfa4b0e74f50ece3ca'
+assert visual['versi_templat'] == '6.2_rumusan_audit_7kategori_kodtajuk_dinamik_bacaan_pengurusan'
+assert 'tipografi_bacaan_pengurusan' in visual and 'kandungan_tambahan_v61' in visual
+assert any('Indonesia' in r for r in visual['bahasa']['peraturan'])
+assert (ROOT / 'downloads/Tambahan_Logik_V6.1.txt').is_file() and 'downloads/Tambahan_Logik_V6.1.txt' in p.urls
 assert visual['taburan_7_kategori']['susunan'] == [{'kod': f'K{i}', 'kategori': c.upper()} for i, c in enumerate(CATEGORIES, 1)]
 assert visual['risiko_4x4_v6']['tahap'] == {'RENDAH': '1–4', 'SEDERHANA': '5–8', 'TINGGI': '9–12', 'KRITIKAL': '13–16'}
 partial = visual['ringkasan_risiko_keseluruhan']['jika_n_belum_lebih_0']

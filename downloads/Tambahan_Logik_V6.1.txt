@@ -1,0 +1,69 @@
+================================================================
+
+PENAMBAHBAIKAN LOGIK V6.1 (WAJIB, MENGATASI ARAHAN V6 JIKA BERCANGGAH)
+
+================================================================
+
+Tujuan: setiap keputusan kategori, skor dan tahap keseluruhan mesti boleh diulang oleh juruaudit lain dengan hasil yang sama.
+
+L1. URUTAN UJIAN KATEGORI (berhenti pada padanan pertama)
+1. K7 — kutipan/transaksi tidak dapat disahkan, atau rekod operasi dan rekod kutipan berbeza tanpa penjelasan berdokumen. Gunakan bahasa berhati-hati: "petunjuk risiko ketirisan … bukan tuduhan penyelewengan dan memerlukan semakan lanjut".
+2. K2 — keputusan dibuat tanpa kuasa/mandat yang sah.
+3. K5 — sumber telah dibeli/diperoleh tetapi tidak digunakan (sia-sia). Wang yang belum dibelanjakan BUKAN K5.
+4. K6 — kuantiti/spesifikasi/kos melebihi keperluan, terutama jika Audit sendiri menyatakan "lebihan".
+5. K4 — peraturan/tempoh/tanggungjawab jelas wujud tetapi tidak dipatuhi atau tidak ditindaklanjuti.
+6. K3 — punca ialah sistem, peralatan usang, reka bentuk/kualiti binaan atau ralat teknikal/rekod.
+7. K1 — punca ialah peraturan, prosedur, peranan atau pemilik proses tidak wujud/tidak jelas.
+Jika tiada ujian dipenuhi dengan bukti: "Belum dapat dikelaskan — bukti tidak mencukupi".
+Isu yang sama merentas tajuk mesti diberi kategori yang sama melainkan punca berbeza dinyatakan.
+
+L2. RUBRIK KEMUNGKINAN (L)
+1 = kes terpencil/sekali.
+2 = satu lokasi/PTj atau ≤3 transaksi.
+3 = beberapa lokasi/PTj, berulang dalam tempoh audit, atau isu berulang merentas tajuk.
+4 = sistemik (seluruh populasi, ≥20 transaksi/lokasi, atau proses manual menyeluruh).
+
+L3. RUBRIK IMPAK (I)
+1 = ketidakselesaan/kekemasan.
+2 = kesan operasi/kewangan terhad atau amaun tidak dinyatakan.
+3 = kewangan material (≥RM100,000), keselamatan/kesihatan, integriti hasil, atau akauntabiliti kepada Kementerian.
+4 = kehilangan besar, kecederaan serius atau pelanggaran undang-undang yang disahkan.
+Justifikasi L dan I mesti menyebut kriteria rubrik yang dipenuhi.
+
+L4. TAHAP RISIKO KESELURUHAN (apabila N_belum = 0)
+KRITIKAL jika ada sekurang-kurangnya satu penemuan Kritikal.
+TINGGI jika penemuan Tinggi ≥ 33.3% daripada N.
+SEDERHANA jika penemuan Tinggi 10%–33.3%, ATAU terdapat isu kronik (L5).
+RENDAH jika penemuan Tinggi < 10% dan tiada isu kronik.
+Nyatakan peratus dan peraturan yang digunakan dalam justifikasi.
+
+L5. TREND DAN ISU KRONIK (Bahagian 4A)
+Jika dokumen meliputi lebih daripada satu tahun/mesyuarat JKA, sediakan jadual perbandingan mengikut tahun (jumlah penemuan, Tinggi/Sederhana/Rendah, K1–K7).
+Isu berulang yang muncul dalam lebih daripada satu tahun laporan = ISU KRONIK (punca akar belum diselesaikan). Senaraikan tajuk bagi setiap tahun.
+
+L6. SEMAKAN KHUSUS K5/K6/K7 (Bahagian 5B-1)
+Sediakan jadual: ID Penemuan | Kategori Diuji | Fakta Dokumen | Keputusan (dikelaskan / kekal Kx dengan sebab).
+Uji semua penemuan melibatkan wang tidak dikutip, perbezaan rekod, aset tidak digunakan atau pembelian berlebihan.
+
+L7. UJIAN KONSISTENSI PENARAFAN (Bahagian 6B)
+Jangan ubah penarafan rasmi. Tandakan "Perlu perhatian" bagi tajuk berpenarafan "Baik"/"Memuaskan" yang mempunyai ≥2 penemuan Tinggi atau sebarang K6/K7.
+
+L8. KEUTAMAAN FOKUS PENGURUSAN (Bahagian 6A)
+Susun mengikut: (a) skor R tertinggi, (b) kehadiran K7/K2, (c) status isu kronik, (d) nilai kewangan yang dinyatakan.
+
+L9. SEMAKAN ARITMETIK SUMBER
+Jumlahkan semula setiap jadual yang digunakan. Jika jumlah, tajuk perenggan dan jadual tidak sepadan, laporkan dalam Batasan Analisis dan gunakan angka yang dijumlahkan semula; jangan betulkan senyap-senyap.
+
+L10. LIPUTAN FOLDER
+Kira laporan berdasarkan halaman "Dikeluarkan oleh" dalam setiap PDF. Surat iringan dan cetakan e-mel bukan sumber penemuan. Fail pendua (hash sama) tidak dikira dua kali.
+
+L11. BAHASA
+Gunakan Bahasa Melayu Malaysia baku (DBP). Jangan gunakan istilah Indonesia (contoh: karena, terkait, analisa, efektif, resiko, praktek, metode, manajemen, rekonsiliasi). Gunakan "dikemas kini", "diperoleh", "kuat kuasa", "penyesuaian rekod".
+
+L12. CHECKPOINT QA TAMBAHAN
+- Urutan ujian L1 digunakan untuk setiap penemuan.
+- Justifikasi L/I merujuk rubrik L2/L3.
+- Tahap keseluruhan mengikut L4.
+- Isu kronik dikenal pasti jika data berbilang tahun.
+- Jadual 5B-1 dan 6B disediakan.
+- Tiada istilah Indonesia.
