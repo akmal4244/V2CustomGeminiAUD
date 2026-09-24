@@ -40,7 +40,7 @@ Prompt gambar pada slaid 10 menggunakan JSON baharu yang dibekalkan pengguna, ve
 
 Gem “Analisis Penuh - V6.1 - 7 Kategori” menambah dua belas peraturan logik (fail `downloads/Tambahan_Logik_V6.1.txt`):
 
-- urutan ujian kategori K7 → K2 → K5 → K6 → K4 → K3 → K1 (berhenti pada padanan pertama);
+- logik kategori dua peringkat: A (sifat isu) A1 K7 → A2 K2 → A3 K5 → A4 K6; B (punca akar) B1 K4 / B2 K3 / B3 K1 mengikut Pendapat Audit > Syor Audit > maklum balas Auditi; tiada K8 (status "Belum dapat dikelaskan");
 - rubrik bertulis bagi Kemungkinan (L) dan Impak (I);
 - peraturan Tahap Risiko Keseluruhan: KRITIKAL jika ada Kritikal; TINGGI jika Tinggi ≥ 33.3%; SEDERHANA jika Tinggi 10%–33.3% atau ada isu kronik; RENDAH jika selainnya;
 - Bahagian 4A trend tahun ke tahun dan isu kronik, 5B-1 semakan K5/K6/K7, 6B ujian konsistensi penarafan;

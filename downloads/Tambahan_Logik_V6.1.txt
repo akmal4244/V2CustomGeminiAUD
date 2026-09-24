@@ -6,16 +6,36 @@ PENAMBAHBAIKAN LOGIK V6.1 (WAJIB, MENGATASI ARAHAN V6 JIKA BERCANGGAH)
 
 Tujuan: setiap keputusan kategori, skor dan tahap keseluruhan mesti boleh diulang oleh juruaudit lain dengan hasil yang sama.
 
-L1. URUTAN UJIAN KATEGORI (berhenti pada padanan pertama)
-1. K7 — kutipan/transaksi tidak dapat disahkan, atau rekod operasi dan rekod kutipan berbeza tanpa penjelasan berdokumen. Gunakan bahasa berhati-hati: "petunjuk risiko ketirisan … bukan tuduhan penyelewengan dan memerlukan semakan lanjut".
-2. K2 — keputusan dibuat tanpa kuasa/mandat yang sah.
-3. K5 — sumber telah dibeli/diperoleh tetapi tidak digunakan (sia-sia). Wang yang belum dibelanjakan BUKAN K5.
-4. K6 — kuantiti/spesifikasi/kos melebihi keperluan, terutama jika Audit sendiri menyatakan "lebihan".
-5. K4 — peraturan/tempoh/tanggungjawab jelas wujud tetapi tidak dipatuhi atau tidak ditindaklanjuti.
-6. K3 — punca ialah sistem, peralatan usang, reka bentuk/kualiti binaan atau ralat teknikal/rekod.
-7. K1 — punca ialah peraturan, prosedur, peranan atau pemilik proses tidak wujud/tidak jelas.
-Jika tiada ujian dipenuhi dengan bukti: "Belum dapat dikelaskan — bukti tidak mencukupi".
-Isu yang sama merentas tajuk mesti diberi kategori yang sama melainkan punca berbeza dinyatakan.
+L1. LOGIK PENGELASAN BERASASKAN KATEGORI (DUA PERINGKAT)
+Setiap penemuan diuji mengikut definisi dan petunjuk kategori dalam Bahagian Kategori. Kategori ditentukan oleh SIFAT ISU dahulu, kemudian PUNCA AKAR. Gejala sahaja (contoh: lewat, tidak lengkap) tidak menentukan kategori.
+
+PERINGKAT A — SIFAT ISU (uji mengikut urutan; berhenti pada padanan pertama yang disokong fakta dokumen)
+A1. K7 Penyelewengan/Ketirisan — WAJIB ada sekurang-kurangnya satu petunjuk utama:
+    (i) kutipan/transaksi tertentu tidak dapat disahkan;
+    (ii) perbezaan material antara rekod operasi dan rekod kutipan/kewangan tanpa penjelasan berdokumen;
+    (iii) konflik kepentingan;
+    (iv) penggunaan aset/sumber untuk tujuan tidak rasmi.
+    Petunjuk sokongan (kawalan tunai lemah, pengasingan tugas lemah, resit tidak individu) SAHAJA tidak mencukupi untuk K7: kelaskan mengikut punca akar (Peringkat B) dan catat sebagai "ruang risiko K7" dalam jadual 5B-1.
+    Bahasa wajib: "petunjuk risiko ketirisan … bukan tuduhan penyelewengan dan memerlukan semakan lanjut".
+A2. K2 Tiada Mandat — keputusan/tindakan dibuat tanpa kuasa, lantikan, perwakilan kuasa atau kelulusan pihak berkuasa yang sah, dan dokumen menyebut isu kuasa itu. Ketidakpatuhan tatacara (contoh: PT dikeluarkan lewat) BUKAN K2 jika kelulusan pihak berkuasa wujud.
+A3. K5 Pembaziran — sumber TELAH dibelanjakan/diperoleh tetapi manfaatnya tidak direalisasikan (aset tidak digunakan, langganan tidak digunakan, stok tamat tempoh, projek tidak memberi manfaat). Peruntukan/wang yang belum dibelanjakan BUKAN K5.
+A4. K6 Pemborosan — sumber masih berguna tetapi kuantiti/spesifikasi/kos/kapasiti melebihi keperluan munasabah, bayaran melebihi kelayakan, atau Audit menyatakan "lebihan".
+
+PERINGKAT B — PUNCA AKAR (jika tiada padanan A1–A4; tentukan berdasarkan punca yang dinyatakan Audit/Auditi dan sasaran syor Audit)
+B1. K4 Kecuaian — peraturan/tempoh/tanggungjawab telah jelas DAN punca ialah tindakan atau ketiadaan tindakan pegawai (tidak menyemak, lewat, tidak menyusul, tidak menyelenggara) tanpa punca struktur atau teknikal dinyatakan.
+B2. K3 Kesilapan/Isu Teknikal — punca ialah sistem, integrasi, data/rekod, klasifikasi, peralatan usang/rosak atau reka bentuk/kualiti binaan.
+B3. K1 Tadbir Urus — punca ialah dasar, peraturan, prosedur, peranan, pemilik proses, penyelarasan, pemantauan pengurusan atau kompetensi yang tidak wujud/tidak jelas/tidak memadai, walaupun ada peraturan umum yang tidak dipatuhi.
+Sumber punca (keutamaan menurun): (1) Pendapat Audit; (2) Syor Audit; (3) maklum balas Auditi. Maklum balas Auditi TIDAK mengatasi Pendapat Audit.
+Petunjuk syor: syor "wujudkan/tambah baik/pinda peraturan, prosedur, panduan atau peranan" = tanggungjawab belum jelas (gagal B1, arah ke B3); syor "pegawai/PTj diberi peringatan" atau "pastikan pegawai mematuhi" = tanggungjawab jelas tetapi tidak dilaksanakan (B1); syor "baiki/ganti/tambah baik sistem, peralatan, rekod" = B2.
+Pendapat templat: jika Pendapat/Syor yang sama diulang bagi banyak penemuan dalam satu tajuk (contoh "tiada peraturan pengurusan bangunan"), elemen templat itu dianalisis sebagai isu berulang/tadbir urus peringkat tajuk (Bahagian 4); kategori setiap penemuan ditentukan oleh punca atau syor yang KHUSUS kepada penemuan itu.
+Pemutus seri Peringkat B: (a) punca yang dinyatakan secara jelas dalam Pendapat Audit; (b) jika lebih daripada satu punca, pilih punca yang menjadi sasaran majoriti syor Audit; (c) jika masih seri: K1 (struktur) > K3 (teknikal) > K4 (individu).
+
+Peraturan umum:
+- Jika tiada ujian dipenuhi dengan bukti: "Belum dapat dikelaskan — bukti tidak mencukupi".
+- Hanya tujuh kategori K1 hingga K7 wujud. TIADA K8. Status kelapan ialah "Belum dapat dikelaskan" dan ia bukan kategori; K1 + … + K7 + Belum dapat dikelaskan = N.
+- Jangan meneka kategori berdasarkan kesan, nilai kewangan, perkataan dalam tajuk atau andaian tentang niat/punca; kategori ialah sifat/punca DOMINAN yang disokong bukti.
+- Isu yang sama merentas tajuk mesti diberi kategori yang sama melainkan punca berbeza dinyatakan.
+- Justifikasi kategori mesti menyebut ujian yang dipenuhi (contoh: "A1(ii)", "B2") dan sebab ujian sebelumnya tidak dipenuhi apabila relevan (contoh: "bukan K7 kerana bayaran direkodkan oleh bank").
 
 L2. RUBRIK KEMUNGKINAN (L)
 1 = kes terpencil/sekali.
@@ -61,7 +81,7 @@ L11. BAHASA
 Gunakan Bahasa Melayu Malaysia baku (DBP). Jangan gunakan istilah Indonesia (contoh: karena, terkait, analisa, efektif, resiko, praktek, metode, manajemen, rekonsiliasi). Gunakan "dikemas kini", "diperoleh", "kuat kuasa", "penyesuaian rekod".
 
 L12. CHECKPOINT QA TAMBAHAN
-- Urutan ujian L1 digunakan untuk setiap penemuan.
+- Logik dua peringkat L1 (A: sifat isu, B: punca akar) digunakan untuk setiap penemuan; justifikasi menyebut kod ujian.
 - Justifikasi L/I merujuk rubrik L2/L3.
 - Tahap keseluruhan mengikut L4.
 - Isu kronik dikenal pasti jika data berbilang tahun.
