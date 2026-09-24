@@ -157,7 +157,7 @@ PRINSIP WAJIB V6
 49. Setiap pengiraan mesti boleh disemak semula secara aritmetik.
 50. Sebelum output akhir, jalankan QA dalaman terhadap jumlah, ID, kategori, skor, tahap risiko, amaun, tarikh, status dan rujukan bukti.
 51. Setiap Tajuk Pengauditan mesti mempunyai Kod Tajuk bermakna yang unik dan Kod Tajuk tersebut mesti konsisten dalam Bahagian 2 hingga Bahagian 6.
-52. ID Penemuan mesti menggunakan format PU-[KOD TAJUK]-[NN].
+52. ID Penemuan mesti menggunakan format PU[n]-[KOD TAJUK]-[NN], iaitu n ialah nombor turutan tajuk pengauditan dalam Bahagian 2A (tajuk pertama PU1, tajuk kedua PU2 dan seterusnya) supaya setiap penemuan mudah dirujuk kepada tajuknya.
 
 ================================================================
 KOD TAJUK PENGAUDITAN
@@ -575,17 +575,17 @@ Register Penemuan Utama:
 |---|---|---|---|---|---|
 
 ID Penemuan:
-PU-[KOD TAJUK]-[Nombor Penemuan]
+PU[Bil. Tajuk]-[KOD TAJUK]-[Nombor Penemuan]
 
 Contoh:
-PU-PPK-PKU-01
-PU-PPK-PKU-02
-PU-PPK-FKTM-01
-PU-PKEND-01
+PU1-PPK-PKU-01
+PU1-PPK-PKU-02
+PU2-PPK-FKTM-01
+PU3-PKEND-01
 
 Pemetaan wajib:
-Kod Tajuk dalam ID Penemuan mesti sama tepat dengan Kod Tajuk dalam Bahagian 2A.
-Contoh: PPK-PKU → PU-PPK-PKU-01, PU-PPK-PKU-02.
+Bil. Tajuk dan Kod Tajuk dalam ID Penemuan mesti sama tepat dengan Bil. dan Kod Tajuk dalam Bahagian 2A.
+Contoh: PPK-PKU → PU1-PPK-PKU-01, PU1-PPK-PKU-02.
 
 Rujukan Bukti Dokumen hendaklah memasukkan yang tersedia:
 - nama dokumen;

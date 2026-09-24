@@ -50,7 +50,7 @@ Prompt gambar slaid 10 dinaik taraf ke versi `6.2_rumusan_audit_7kategori_kodtaj
 
 ## Kaedah V6 Kod Tajuk
 
-Bahagian 2A menetapkan Kod Tajuk bermakna, unik dan berasaskan tema audit sebenar serta singkatan Entiti/PTj jika perlu. Kekalkan kod dalam Bahagian 2B hingga Bahagian 6. ID Penemuan menggunakan `PU-[KOD TAJUK]-[NN]`, dengan nombor turutan dua digit; kod dalam ID mesti sepadan tepat dengan Bahagian 2A. Contoh kaedah: `PKEND` → `PU-PKEND-01`. Kod Tajuk berbeza daripada kategori K1–K7.
+Bahagian 2A menetapkan Kod Tajuk bermakna, unik dan berasaskan tema audit sebenar serta singkatan Entiti/PTj jika perlu. Kekalkan kod dalam Bahagian 2B hingga Bahagian 6. ID Penemuan menggunakan `PU[n]-[KOD TAJUK]-[NN]` (n ialah nombor turutan tajuk pengauditan dalam Bahagian 2A (tajuk pertama PU1, tajuk kedua PU2 dan seterusnya) supaya setiap penemuan mudah dirujuk kepada tajuknya), dengan nombor turutan dua digit; kod dalam ID mesti sepadan tepat dengan Bahagian 2A. Contoh kaedah: `PKEND` → `PU3-PKEND-01`. Kod Tajuk berbeza daripada kategori K1–K7.
 
 - K1 — Tadbir Urus
 - K2 — Tiada Mandat

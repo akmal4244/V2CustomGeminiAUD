@@ -2222,8 +2222,8 @@
             <div class="guidance-body">
               <p><strong>Tetapkan Kod Tajuk dalam Bahagian 2A — Senarai Pengauditan.</strong> Bina singkatan tema sebenar; tambah singkatan Entiti / PTj jika tema sama. Utamakan singkatan rasmi, huruf besar dan sempang jika perlu.</p>
               <p><strong>Kod mesti unik dan kekal.</strong> Gunakan kod sama dalam Bahagian 2B, 3, 4, 5 dan 6. Elakkan kod nombor generik seperti TA-01 jika kod bermakna boleh dibentuk. Kod Tajuk berbeza daripada kategori K1–K7.</p>
-              <p><strong>Format: PU-[KOD TAJUK]-[NN].</strong> Gunakan dua digit bagi nombor turutan penemuan dalam tajuk tersebut. Kod dalam ID mesti sama tepat dengan Kod Tajuk Bahagian 2A.</p>
-              <p><strong>Contoh kaedah sahaja:</strong> Pengurusan Kenderaan → PKEND → PU-PKEND-01. Bagi dua tajuk Pengurusan Pentadbiran dan Kewangan: PPK-PKU → PU-PPK-PKU-01 dan PPK-FKTM → PU-PPK-FKTM-01. Contoh bukan dapatan audit sebenar.</p>
+              <p><strong>Format: PU[n]-[KOD TAJUK]-[NN].</strong> Nilai n ialah nombor turutan tajuk pengauditan dalam Bahagian 2A (tajuk pertama PU1, tajuk kedua PU2 dan seterusnya) supaya setiap penemuan mudah dirujuk kepada tajuknya. Gunakan dua digit bagi nombor turutan penemuan dalam tajuk tersebut. Kod dalam ID mesti sama tepat dengan Kod Tajuk Bahagian 2A.</p>
+              <p><strong>Contoh kaedah sahaja:</strong> Pengurusan Kenderaan → PKEND → PU3-PKEND-01. Bagi dua tajuk Pengurusan Pentadbiran dan Kewangan: PPK-PKU → PU1-PPK-PKU-01 dan PPK-FKTM → PU2-PPK-FKTM-01. Contoh bukan dapatan audit sebenar.</p>
             </div>
           </details>
           <div class="actions"><a class="btn" href="downloads/Contoh_Latihan_Sintetik_V6.md" download>Muat turun contoh latihan sintetik V6</a></div>
@@ -2275,12 +2275,12 @@ Peraturan:
 
 Gunakan format ID Penemuan:
 
-**PU-[KOD TAJUK]-[NN]**
+**PU[n]-[KOD TAJUK]-[NN]**
 
 Contoh kaedah:
-- `PPK-PKU` → `PU-PPK-PKU-01`
-- `PPK-FKTM` → `PU-PPK-FKTM-01`
-- `PKEND` → `PU-PKEND-01`
+- `PPK-PKU` → `PU1-PPK-PKU-01`
+- `PPK-FKTM` → `PU2-PPK-FKTM-01`
+- `PKEND` → `PU3-PKEND-01`
 
 Pastikan Kod Tajuk dalam setiap ID Penemuan sama tepat dengan Kod Tajuk yang ditetapkan dalam Bahagian 2A.
 
@@ -2443,7 +2443,7 @@ Sebelum memberikan jawapan akhir, semak semula:
 * Tahap Risiko Keseluruhan tidak dimuktamadkan jika penilaian masih belum lengkap.
 * semua Tajuk Pengauditan mempunyai Kod Tajuk bermakna yang unik;
 * Kod Tajuk digunakan secara konsisten dalam semua bahagian;
-* setiap ID Penemuan menggunakan format `PU-[KOD TAJUK]-[NN]` dan sepadan dengan Kod Tajuk tajuk berkenaan.</pre>
+* setiap ID Penemuan menggunakan format `PU[n]-[KOD TAJUK]-[NN]` dan sepadan dengan Kod Tajuk tajuk berkenaan.</pre>
           </div>
           <div class="callout">Semua peserta menggunakan prompt yang sama supaya hasil analisis lebih seragam.</div>
         </div>
@@ -2462,7 +2462,7 @@ Sebelum memberikan jawapan akhir, semak semula:
             <li>Analisis Isu Audit Mengikut 7 Kategori dan Tahap Risiko</li>
             <li>Rumusan Keseluruhan, Status/Tahap Risiko Keseluruhan dan Cadangan Fokus Pengurusan</li>
           </ol>
-          <div class="callout">Semak enam bahagian sebelum dipindahkan ke slaid. Kekalkan Kod Tajuk B2A dan ID PU-[KOD TAJUK]-[NN]; semua ID Bahagian 3 mesti muncul dalam Bahagian 5. QA dilaksanakan sebelum respons akhir.</div>
+          <div class="callout">Semak enam bahagian sebelum dipindahkan ke slaid. Kekalkan Kod Tajuk B2A dan ID PU[n]-[KOD TAJUK]-[NN]; semua ID Bahagian 3 mesti muncul dalam Bahagian 5. QA dilaksanakan sebelum respons akhir.</div>
           <details class="guidance" id="logic-v61"><summary>Semakan logik V6.1 • logik kategori dua peringkat + 4 perkara</summary><div class="guidance-body"><ul><li><strong>5-0 Logik keputusan dua peringkat:</strong> Peringkat A (sifat isu) — A1 K7 → A2 K2 → A3 K5 → A4 K6, berhenti pada padanan pertama; Peringkat B (punca akar) — B1 K4, B2 K3, B3 K1 berdasarkan Pendapat Audit, kemudian Syor Audit, kemudian maklum balas Auditi. Tiada K8: status kelapan ialah “Belum dapat dikelaskan”. Jangan teka kategori berdasarkan kesan, nilai atau tajuk. L dan I merujuk rubrik bertulis.</li><li><strong>4A Trend dan isu kronik:</strong> jika laporan meliputi lebih daripada satu tahun, bandingkan setiap tahun dan tandakan isu berulang merentas tahun sebagai isu kronik.</li><li><strong>5B-1 Semakan K5/K6/K7:</strong> jadual keputusan bagi setiap penemuan berpotensi pembaziran, pemborosan atau ketirisan.</li><li><strong>6B Konsistensi penarafan:</strong> tajuk berpenarafan “Baik” dengan ≥2 isu Tinggi atau K6/K7 ditanda “Perlu perhatian”, tanpa mengubah penarafan rasmi.</li><li><strong>Tahap keseluruhan:</strong> KRITIKAL jika ada Kritikal; TINGGI jika Tinggi ≥ 33.3%; SEDERHANA jika Tinggi 10%–33.3% atau ada isu kronik; RENDAH jika selainnya.</li></ul></div></details>
           <details class="guidance" id="category-guide"><summary>Baca definisi tujuh kategori • K1 → K7</summary><div class="guidance-body"><dl class="category-definitions"><dt>K1 — Tadbir Urus</dt><dd>Kelemahan struktur tadbir urus, dasar, SOP, penyelarasan, pemantauan atau akauntabiliti. Bezakan kawalan tidak memadai (K1) daripada tanggungjawab jelas yang tidak dilaksanakan (K4).</dd><dt>K2 — Tiada Mandat</dt><dd>Ketiadaan, ketidakjelasan atau ketidakcukupan kuasa, mandat, kelulusan, surat lantikan atau perwakilan kuasa rasmi. Sokong pengelasan dengan bukti; dokumen tidak dikemukakan tidak semestinya membuktikan kuasa tiada.</dd><dt>K3 — Kesilapan / Isu Teknikal</dt><dd>Kesilapan rekod, data, dokumen, sistem, pengiraan atau proses teknikal. Jangan menganggap setiap ralat sebagai kecuaian.</dd><dt>K4 — Kecuaian</dt><dd>Tugas atau kawalan yang jelas tidak dilaksanakan dengan teliti, lewat, tidak disemak atau tiada tindakan susulan. Nyatakan kewajipan dan bukti kegagalan.</dd><dt>K5 — Pembaziran</dt><dd>Wang, aset, masa atau sumber digunakan tetapi manfaat sepatutnya tidak diperoleh atau sumber menjadi sia-sia. Gunakan bukti penggunaan dan manfaat.</dd><dt>K6 — Pemborosan</dt><dd>Kos, kuantiti atau penggunaan sumber berlebihan berbanding keperluan munasabah walaupun masih berguna. Amaun besar sahaja tidak membuktikan pemborosan.</dd><dt>K7 — Penyelewengan / Ketirisan</dt><dd>Bukti atau petunjuk risiko salah guna, manipulasi, transaksi meragukan atau ketirisan. Gunakan bahasa berhati-hati dan nyatakan keperluan semakan lanjut; jangan membuat tuduhan muktamad tanpa bukti jelas.</dd></dl><p><strong>Satu kategori utama bagi setiap ID.</strong> Kategori dan tahap risiko ialah dua dimensi berbeza. “Belum dapat dikelaskan — bukti tidak mencukupi” ialah status, bukan K8.</p></div></details>
         </div>
@@ -2480,7 +2480,7 @@ Sebelum memberikan jawapan akhir, semak semula:
                 <button class="btn" type="button" data-copy-target="bonus-prompt-1">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-1" tabindex="0">Sediakan petikan daftar penuh Bahagian 3 dan penilaian Bahagian 5 V6: ID, tajuk, fakta, kategori/status, L, I, R, tahap, justifikasi dan rujukan. Kekalkan satu baris setiap ID termasuk Rendah, tidak berulang, belum dikelaskan dan belum berskor. Jangan reka maklumat. Set ID mesti sama dengan daftar induk.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2488,7 +2488,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-2">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-2" tabindex="0">Sediakan PETIKAN semua ID Kritikal dan Tinggi yang mempunyai skor sah dalam Bahagian 5. Susun Kritikal dahulu, sertakan bukti, L/I/R, kategori dan cadangan tindakan. Jangan ubah N atau padam ID daripada daftar penuh. Nyatakan isu signifikan belum lengkap secara berasingan sebagai “Risiko belum lengkap — maklumat tambahan diperlukan”, tanpa mereka tahap.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2496,7 +2496,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-3">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-3" tabindex="0">Sediakan petikan Bahagian 4 V6: isu berulang, ID, tajuk terlibat, kekerapan, persamaan substantif, bukti dan implikasi. Bezakan isu merentas tajuk daripada sejarah audit yang benar-benar dinyatakan dalam dokumen. Jangan menganggap fail pendua sebagai kejadian baharu atau mereka pengulangan dan punca.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2504,7 +2504,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-4">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-4" tabindex="0">Semak daftar Bahagian 3 dan Bahagian 5: jumlah ID unik, baris, ID hilang, tambahan dan pendua. Semua ID B3 mesti ada tepat sekali dalam B5 dan sebaliknya. N ialah semua ID B3. Kekalkan ID yang belum dikelaskan atau belum lengkap risikonya. Bezakan kesepadanan ID daripada kelengkapan bukti dan risiko.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2520,7 +2520,7 @@ K5 — Pembaziran
 K6 — Pemborosan
 K7 — Penyelewengan / Ketirisan
 Nyatakan bilangan dan ID bagi setiap kategori termasuk sifar. Laporkan “Belum dapat dikelaskan — bukti tidak mencukupi” berasingan, bukan K8. Semak K1 + K2 + K3 + K4 + K5 + K6 + K7 + Belum dapat dikelaskan = N. Satu kategori utama setiap ID; jangan paksa kategori dominan apabila bukti tidak memadai.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2528,7 +2528,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-6">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-6" tabindex="0">Sediakan petikan Bahagian 6 V6 dengan jadual Keutamaan, ID Penemuan, Isu Yang Perlu Difokuskan, Tahap/Status Risiko, Sebab Menjadi Keutamaan dan Cadangan Tindakan Pengurusan. Liputi isu Kritikal, Tinggi, berulang signifikan dan isu penting belum lengkap yang memerlukan maklumat lanjut. Bilangan cadangan mengikut bukti. Semua ID mesti wujud dalam B3/B5; jangan cipta tahap risiko atau isu baharu.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2536,7 +2536,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-7">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-7" tabindex="0">Sediakan PETIKAN ringkasan eksekutif maksimum 150 patah perkataan daripada analisis V6 yang disemak: entiti, dokumen/tajuk/ID, kategori dominan jika dapat ditentukan, isu berulang, N_sah, N_belum, status risiko dan fokus pengurusan. Jika N_belum &gt; 0, kekalkan status SEPARA — BELUM LENGKAP dan jangan nyatakan tahap keseluruhan muktamad. Bezakan markah rasmi daripada penilaian risiko.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2544,7 +2544,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-8">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-8" tabindex="0">Semak SEMUA ID: fakta, nama fail, halaman/seksyen sebenar, justifikasi kategori, L dan I serta maklumat tambahan diperlukan. Semak beza K1/K2, K1/K4 dan K5/K6; gunakan bahasa berhati-hati bagi K7. Jangan reka halaman, amaun, tarikh, status atau punca. Kekalkan komponen L atau I yang mempunyai bukti walaupun komponen lain tiada.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2552,7 +2552,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
                 <button class="btn" type="button" data-copy-target="bonus-prompt-9">Salin Contoh</button>
               </div>
               <pre id="bonus-prompt-9" tabindex="0">Bandingkan semua tajuk pengauditan bagi entiti sama dalam sesi ini: objektif, skop, markah rasmi jika dinyatakan, bilangan ID, isu utama, isu berulang dan fokus pengurusan. Nyatakan batasan bukti. Jangan campurkan universiti atau dokumen lain, mencipta skor tajuk, atau menyamakan penilaian risiko dengan markah rasmi.
-Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
+Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN]. Kod dalam setiap ID mesti sama tepat dengan Kod Tajuk berkenaan, konsisten dalam Bahagian 2 hingga Bahagian 6.</pre>
             </div>
             <div class="prompt-box">
               <div class="prompt-top">
@@ -2563,7 +2563,7 @@ Kekalkan Kod Tajuk yang ditetapkan dalam Bahagian 2A dan ID PU-[KOD TAJUK]-[NN].
 
 Tukarkan analisis yang disemak kepada isi slaid: Tajuk Analisis, Ringkasan Eksekutif, Penemuan Utama, Isu Berulang, Tujuh Kategori dan Tahap Risiko, Cadangan Fokus Pengurusan serta Rumusan Penutup. Bilangan slaid mengikut kandungan dan kebolehbacaan.
 
-Kekalkan Kod Tajuk Bahagian 2A dan ID PU-[KOD TAJUK]-[NN] yang sedia ada. Label ringkasan terpilih sebagai PETIKAN; daftar penuh Bahagian 3 dan Bahagian 5 serta rujukan bukti kekal sebagai bahan semakan. Jangan reka fakta, skor, status, tindakan atau markah rasmi.
+Kekalkan Kod Tajuk Bahagian 2A dan ID PU[n]-[KOD TAJUK]-[NN] yang sedia ada. Label ringkasan terpilih sebagai PETIKAN; daftar penuh Bahagian 3 dan Bahagian 5 serta rujukan bukti kekal sebagai bahan semakan. Jangan reka fakta, skor, status, tindakan atau markah rasmi.
 
 Gunakan K1 Tadbir Urus; K2 Tiada Mandat; K3 Kesilapan / Isu Teknikal; K4 Kecuaian; K5 Pembaziran; K6 Pemborosan; K7 Penyelewengan / Ketirisan. R = L × I; Rendah 1–4, Sederhana 5–8, Tinggi 9–12, Kritikal 13–16.
 

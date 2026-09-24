@@ -29,10 +29,10 @@ PKEND = Pengurusan Kenderaan.
 Kod yang sama digunakan dalam Bahagian 2B hingga Bahagian 6.
 
 ID Penemuan       Kategori/status             L   I   R    Tahap
-PU-PPK-PTJA-01   K1 — Tadbir Urus             3   3   9    Tinggi
-PU-PPK-PTJA-02   K3 — Isu Teknikal            2   2   4    Rendah
-PU-PKEND-01   K4 — Kecuaian                4   —   —    Belum dapat ditentukan
-PU-PKEND-02   Belum dapat dikelaskan       —   3   —    Belum dapat ditentukan
+PU1-PPK-PTJA-01  K1 — Tadbir Urus             3   3   9    Tinggi
+PU1-PPK-PTJA-02  K3 — Isu Teknikal            2   2   4    Rendah
+PU2-PKEND-01     K4 — Kecuaian                4   —   —    Belum dapat ditentukan
+PU2-PKEND-02     Belum dapat dikelaskan       —   3   —    Belum dapat ditentukan
 
 Semua empat ID kekal dalam B3 dan B5.
 N = 4; N_sah = 2; N_belum = 2; 2 + 2 = 4.
@@ -43,14 +43,14 @@ Statistik risiko SEPARA (subset N_sah=2):
 Tinggi = 1/2 × 100 = 50%; Rendah = 1/2 × 100 = 50%.
 Angka ini tidak mewakili keseluruhan empat penemuan.
 
-Kekalkan L=4 bagi PU-PKEND-01 dan I=3 bagi PU-PKEND-02.
-Minta bukti impak PU-PKEND-01 serta kemungkinan dan kategori PU-PKEND-02.
+Kekalkan L=4 bagi PU2-PKEND-01 dan I=3 bagi PU2-PKEND-02.
+Minta bukti impak PU2-PKEND-01 serta kemungkinan dan kategori PU2-PKEND-02.
 Jangan isi komponen yang hilang atau mereka tahap.
 
 STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP
 Tiada Tahap Risiko Keseluruhan muktamad.
-PU-PPK-PTJA-01 memerlukan fokus tindakan berdasarkan risiko Tinggi yang sah.
-PU-PKEND-01 dan PU-PKEND-02 memerlukan maklumat tambahan sebelum risiko dapat dilengkapkan.
+PU1-PPK-PTJA-01 memerlukan fokus tindakan berdasarkan risiko Tinggi yang sah.
+PU2-PKEND-01 dan PU2-PKEND-02 memerlukan maklumat tambahan sebelum risiko dapat dilengkapkan.
 ```
 
 ## Semakan tambahan
@@ -61,4 +61,4 @@ PU-PKEND-01 dan PU-PKEND-02 memerlukan maklumat tambahan sebelum risiko dapat di
 - Jika N_belum=0 dan N>0, nilai risiko keseluruhan berdasarkan corak risiko, isu berulang, keluasan impak dan kawalan; bukan label daripada purata sahaja.
 - Cadangan pengurusan mesti menggunakan ID B3/B5 dan bilangan yang sesuai dengan bukti.
 
-- Semua Kod Tajuk mesti unik, bermakna, ditetapkan dalam Bahagian 2A dan konsisten dalam Bahagian 2B hingga Bahagian 6. ID menggunakan PU-[KOD TAJUK]-[NN], dengan nombor turutan dua digit. Kod Tajuk bukan kod kategori K1–K7.
+- Semua Kod Tajuk mesti unik, bermakna, ditetapkan dalam Bahagian 2A dan konsisten dalam Bahagian 2B hingga Bahagian 6. ID menggunakan PU[n]-[KOD TAJUK]-[NN], dengan nombor turutan dua digit. Kod Tajuk bukan kod kategori K1–K7.

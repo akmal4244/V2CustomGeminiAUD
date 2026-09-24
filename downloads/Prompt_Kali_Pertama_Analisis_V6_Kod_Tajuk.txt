@@ -33,12 +33,12 @@ Peraturan:
 
 Gunakan format ID Penemuan:
 
-**PU-[KOD TAJUK]-[NN]**
+**PU[n]-[KOD TAJUK]-[NN]**
 
 Contoh kaedah:
-- `PPK-PKU` → `PU-PPK-PKU-01`
-- `PPK-FKTM` → `PU-PPK-FKTM-01`
-- `PKEND` → `PU-PKEND-01`
+- `PPK-PKU` → `PU1-PPK-PKU-01`
+- `PPK-FKTM` → `PU2-PPK-FKTM-01`
+- `PKEND` → `PU3-PKEND-01`
 
 Pastikan Kod Tajuk dalam setiap ID Penemuan sama tepat dengan Kod Tajuk yang ditetapkan dalam Bahagian 2A.
 
@@ -201,4 +201,4 @@ Sebelum memberikan jawapan akhir, semak semula:
 * Tahap Risiko Keseluruhan tidak dimuktamadkan jika penilaian masih belum lengkap.
 * semua Tajuk Pengauditan mempunyai Kod Tajuk bermakna yang unik;
 * Kod Tajuk digunakan secara konsisten dalam semua bahagian;
-* setiap ID Penemuan menggunakan format `PU-[KOD TAJUK]-[NN]` dan sepadan dengan Kod Tajuk tajuk berkenaan.
+* setiap ID Penemuan menggunakan format `PU[n]-[KOD TAJUK]-[NN]` dan sepadan dengan Kod Tajuk tajuk berkenaan.

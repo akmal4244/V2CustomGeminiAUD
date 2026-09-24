@@ -311,17 +311,17 @@ Gunakan jadual berikut:
 **ID Penemuan**  
 Gunakan format:
 
-PU-[KOD TAJUK]-[Nombor Penemuan]
+PU[Bil. Tajuk]-[KOD TAJUK]-[Nombor Penemuan]
 
 Contoh:
-- PU-PPK-PKU-01
-- PU-PPK-PKU-02
-- PU-PPK-FKTM-01
-- PU-PKEND-01
+- PU1-PPK-PKU-01
+- PU1-PPK-PKU-02
+- PU2-PPK-FKTM-01
+- PU3-PKEND-01
 
 Peraturan pemetaan:
 - Bahagian `KOD TAJUK` dalam ID Penemuan mesti sama tepat dengan Kod Tajuk di Bahagian 2A.
-- Contoh: `PPK-PKU` → `PU-PPK-PKU-01`, `PU-PPK-PKU-02`.
+- Contoh: `PPK-PKU` → `PU1-PPK-PKU-01`, `PU1-PPK-PKU-02`.
 - Nombor terakhir ialah nombor turutan penemuan dalam tajuk tersebut dan hendaklah menggunakan dua digit.
 
 **Penemuan Utama**  

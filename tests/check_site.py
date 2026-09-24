@@ -111,7 +111,7 @@ structure = re.search(r'<ol[^>]*id="report-structure".*?</ol>', html, re.S).grou
 assert structure.count("<li>") == 6, "V6 has six report sections"
 assert "N_sah + N_belum = N" in text
 assert 'id="title-code-guide"' in html
-assert "PU-[KOD TAJUK]-[NN]" in unescape(prompt)
+assert "PU[n]-[KOD TAJUK]-[NN]" in unescape(prompt)
 assert "Bahagian 2A" in unescape(prompt)
 assert not re.search(r"PU-\d+-\d+", text), "Obsolete numeric-only title IDs"
 assert "STATUS PENILAIAN RISIKO KESELURUHAN: SEPARA — BELUM LENGKAP" in text
